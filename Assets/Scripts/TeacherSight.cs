@@ -20,7 +20,7 @@ public class TeacherSight : MonoBehaviour
      {
          if (other.gameObject.tag == "Player")
          {
-             Debug.Log ("i found you  !");
+             Debug.Log ("I found you!");
          }
      }
 }

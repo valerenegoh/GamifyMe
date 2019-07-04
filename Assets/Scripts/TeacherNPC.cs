@@ -5,103 +5,51 @@ using UnityEngine;
 public class TeacherNPC : MonoBehaviour
 {
     public float speed;
-    private float waitTime;
-    public float startWaitTime;
 
     public Transform[] moveSpots;
-    private int randomSpot;
+    public int currentSpot = 0;
+    public bool movable = true;
+    public bool doPanning = true;
+    public float turnSpeed;
 
-    //check if already Rotate
-    private bool action;
-
-    //rotate left right control var
-    private bool leftRotated = false;
+    // number of tables per row
+    public int numCol = 5;
+    public int numRow = 3;
 
     // Start is called before the first frame update
     void Start()
     {
-      waitTime = startWaitTime;
-      action = false;
-      randomSpot = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-      transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
-
-      if(Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f){
-        if(waitTime <= 0){
-            randomSpot += 1;
-            if(randomSpot==moveSpots.Length){
-              randomSpot = 0;
-            }
-            waitTime = startWaitTime;
-            action = false;
-        } else
-          {
-            if(!action)
-            {
-              switch (moveSpots[randomSpot].tag)
-              {
-                  case "rotateLeft":
-                      Debug.Log("Rotate Left");
-                      RotateLeft();
-                      StartCoroutine(myFunction(3f));
-                      action = true;
-                      break;
-                  case "rotateRight":
-                      Debug.Log("Rotate Right");
-                      RotateRight();
-                      action = true;
-                      break;
-                  case "rotateLeftRight":
-                      Debug.Log("Rotate Left then Right");
-                      RotateLeft();
-                      RotateRight();
-                      action = true;
-                      Debug.Log("finishing rotate left right...");
-                      break;
-                  case "skip":
-                      Debug.Log("Skip");
-                      Skip();
-                      action = true;
-                      break;
-                  default:
-                      Debug.Log("Default case");
-                      action = true;
-                      break;
-              }
-            }
-            waitTime -= Time.deltaTime;
-          }
+      if(Vector2.Distance(transform.position, moveSpots[currentSpot].position) < 0.2f){
+          choseNextSpot();
       }
+      Transform target = moveSpots[currentSpot];
+      transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+      Vector2 dir = target.position - transform.position; 
+      // transform.up = dir;
+      transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, dir), Time.fixedDeltaTime * turnSpeed);
     }
 
-    IEnumerator myFunction(float time) {
-      yield return new WaitForSeconds(time);
-      RotateRight();
+    void choseNextSpot(){
+      //possible spots
+      // Debug.Log("current: " + currentSpot);
+      List<int> possibleSpots = new List<int>();
+      int total = (numRow+1)*(numCol+1);
+      int up = currentSpot-numCol-1 ;
+      int down = currentSpot+numCol+1;
+      int left = currentSpot-1;
+      int right = currentSpot+1;
+      if((left+1)%(numCol+1) != 0 && left>0 || left == 0){ possibleSpots.Add(left);} 
+      if (right%(numCol+1) != 0 && right<total){  possibleSpots.Add(right);}
+      if(up > 0){ possibleSpots.Add(up); } 
+      if(down <total){ possibleSpots.Add(down);} 
+      // foreach (int i in possibleSpots){
+      //   Debug.Log(i);
+      // }
+      currentSpot = possibleSpots[Random.Range(0, possibleSpots.Count)];
     }
-
-    void RotateLeft()
-    {
-      transform.Rotate (Vector3.forward * -90);
-    }
-
-    void RotateRight()
-    {
-      transform.Rotate (Vector3.forward * 90);
-    }
-
-    void RotateLeftRight()
-    {
-      transform.Rotate (Vector3.forward * 180);
-    }
-
-    void Skip()
-    {
-      waitTime = 0;
-    }
-
-
 }

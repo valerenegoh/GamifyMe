@@ -5,7 +5,7 @@ using UnityEngine;
 public class CheatBar : MonoBehaviour
 {
 	private Transform cheatBar;
-	private float size;
+	public float size;
 	private bool cheating;
 	// Start is called before the first frame update
 	void Start()

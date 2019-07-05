@@ -21,6 +21,8 @@ public class TeacherSight : MonoBehaviour
          if (other.gameObject.tag == "Player")
          {
              Debug.Log ("I found you!");
+             GameManager.instance.Result("YOU LOSE!");
+             FindObjectOfType<GameManager>().EndGame();
          }
      }
 }

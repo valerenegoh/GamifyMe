@@ -24,7 +24,7 @@ public class CheatBar : MonoBehaviour
 		cheating=false;
 	}
 	void Update(){
-		if(cheating){
+		if(cheating && (Input.GetKey("space"))){
 			if(size<1f){
 				size=size+0.005f;
 			}

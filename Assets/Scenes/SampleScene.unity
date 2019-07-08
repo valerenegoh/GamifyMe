@@ -247,7 +247,7 @@ PrefabInstance:
     - target: {fileID: 4408069828382959505, guid: 65765eda3cbc93e47bfe2ddff118d4af,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9425131
+      value: -3.85
       objectReference: {fileID: 0}
     - target: {fileID: 4408069828382959505, guid: 65765eda3cbc93e47bfe2ddff118d4af,
         type: 3}
@@ -2758,7 +2758,7 @@ PrefabInstance:
     - target: {fileID: 4408069828382959505, guid: 65765eda3cbc93e47bfe2ddff118d4af,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.81
       objectReference: {fileID: 0}
     - target: {fileID: 4408069828382959505, guid: 65765eda3cbc93e47bfe2ddff118d4af,
         type: 3}
@@ -2809,6 +2809,11 @@ PrefabInstance:
         type: 3}
       propertyPath: cheatBarName
       value: cheatbar (english)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444399113877796979, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65765eda3cbc93e47bfe2ddff118d4af, type: 3}
@@ -4280,7 +4285,7 @@ Transform:
   m_LocalScale: {x: 0.176, y: 0.176, z: 0.176}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1921043441
 CircleCollider2D:
@@ -5220,12 +5225,12 @@ PrefabInstance:
     - target: {fileID: 4408069828382959505, guid: 65765eda3cbc93e47bfe2ddff118d4af,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.2306814
+      value: 4.16
       objectReference: {fileID: 0}
     - target: {fileID: 4408069828382959505, guid: 65765eda3cbc93e47bfe2ddff118d4af,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.020343535
+      value: -3.8
       objectReference: {fileID: 0}
     - target: {fileID: 4408069828382959505, guid: 65765eda3cbc93e47bfe2ddff118d4af,
         type: 3}
@@ -5329,7 +5334,7 @@ PrefabInstance:
     - target: {fileID: 6898327966949381477, guid: 9f875ed193a48d04cb2b478c4eeca53d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6898327966949381477, guid: 9f875ed193a48d04cb2b478c4eeca53d,
         type: 3}

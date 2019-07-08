@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c33675f3123089f4c841a2ccc7bc2722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cheatBarName: 
 --- !u!1001 &4408069827526765501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116,17 +117,17 @@ PrefabInstance:
     - target: {fileID: 8055280129352174803, guid: 449fef29f1df5f240935d29dded07087,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0208745
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8055280129352174803, guid: 449fef29f1df5f240935d29dded07087,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9030002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8055280129352174803, guid: 449fef29f1df5f240935d29dded07087,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.51460624
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8055280129352174803, guid: 449fef29f1df5f240935d29dded07087,
         type: 3}
@@ -189,6 +190,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: f190fd2f34f84e948b40457a18c898ea,
         type: 3}
+    - target: {fileID: 5196050505957544910, guid: 449fef29f1df5f240935d29dded07087,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 449fef29f1df5f240935d29dded07087, type: 3}
 --- !u!4 &5973610108009391982 stripped

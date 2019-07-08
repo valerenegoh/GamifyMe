@@ -12,6 +12,7 @@ public class TriggerCheatBar : MonoBehaviour
 		cheatBarScript=cheatBar.GetComponent<CheatBar>();
 	}
 	void OnTriggerEnter2D(Collider2D other){
+		
 		if(other.tag=="Player"){
 			cheatBarScript.playerCheating();
 		}
@@ -21,4 +22,5 @@ public class TriggerCheatBar : MonoBehaviour
 			cheatBarScript.playerNotCheating();
 		}
 	}
+
 }

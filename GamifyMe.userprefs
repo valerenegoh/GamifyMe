@@ -1,10 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TriggerCheatBar.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CheatBar.cs">
     <Files>
-      <File FileName="Assets\Scripts\CheatBar.cs" Line="28" Column="13" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="32" Column="2" />
-      <File FileName="Assets\Scripts\TeacherNPC.cs" Line="48" Column="1" />
+      <File FileName="Assets\Scripts\CheatBar.cs" Line="31" Column="4" />
       <File FileName="Assets\Scripts\TriggerCheatBar.cs" Line="5" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>

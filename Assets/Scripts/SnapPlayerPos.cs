@@ -16,7 +16,7 @@ public class SnapPlayerPos : MonoBehaviour
     {
     	Player = GameObject.Find("Player");
       PlayerController=Player.GetComponent<PlayerController>();
-			ExamBar = GameObject.Find("cheatbar");
+		ExamBar = GameObject.Find("cheatbar (english)");
 			CheatBar = ExamBar.GetComponent<CheatBar>();
     }
 

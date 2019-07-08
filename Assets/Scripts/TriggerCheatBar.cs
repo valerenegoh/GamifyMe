@@ -6,9 +6,9 @@ public class TriggerCheatBar : MonoBehaviour
 {
 	private GameObject cheatBar;
 	private CheatBar cheatBarScript;
-
+	public string cheatBarName;
 	void Start(){
-		cheatBar= GameObject.Find("cheatbar");
+		cheatBar= GameObject.Find(cheatBarName);
 		cheatBarScript=cheatBar.GetComponent<CheatBar>();
 	}
 	void OnTriggerEnter2D(Collider2D other){

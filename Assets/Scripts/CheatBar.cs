@@ -14,7 +14,7 @@ public class CheatBar : MonoBehaviour
 		size=0.01f;
 		cheating=false;
 
-		cheatBar.localScale=new Vector3(1f, size);
+		cheatBar.localScale=new Vector3(size, 1f);
 	}
 
 	public void playerCheating(){
@@ -34,6 +34,6 @@ public class CheatBar : MonoBehaviour
 				size=size-0.001f;
 			}
 		}
-		cheatBar.localScale=new Vector3(1f, size);
+		cheatBar.localScale=new Vector3(size, 1f);
 	}
 }

@@ -37,7 +37,14 @@ public class SnapPlayerPos : MonoBehaviour
 				StartCoroutine(Freeze(1f));
 				other.transform.eulerAngles = new Vector3(0,0,0);
 				other.transform.position = new Vector3(x, y, 0);
-			if(CheatBar_English.size >= 0.3f && CheatBar_Math.size >= 0.3f && CheatBar_Science.size>= 0.3f){
+				
+				// Locks the cheatbar 
+				CheatBar_English.cheatBarLock();
+				CheatBar_Science.cheatBarLock();
+				CheatBar_Math.cheatBarLock();
+				
+				// If above benchmark wins
+				if(CheatBar_English.size >= 0.3f && CheatBar_Math.size >= 0.3f && CheatBar_Science.size>= 0.3f){
 					GameManager.instance.Result("YOU WIN!");
 				}
 			}

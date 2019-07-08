@@ -6,15 +6,20 @@ public class CheatBar : MonoBehaviour
 {
 	private Transform cheatBar;
 	public float size;
+	private float size_lock;
 	private bool cheating;
+	private Transform cheatBar_locked;
+
 	// Start is called before the first frame update
 	void Start()
 	{
 		cheatBar=transform.Find("bar");
-		size=0.01f;
+		cheatBar_locked=transform.Find("bar_locked");
+		size=0f;
+		size_lock=0f;
 		cheating=false;
-
 		cheatBar.localScale=new Vector3(size, 1f);
+		cheatBar_locked.localScale=new Vector3(0f, 1f);
 	}
 
 	public void playerCheating(){
@@ -23,6 +28,10 @@ public class CheatBar : MonoBehaviour
 	public void playerNotCheating(){
 		cheating=false;
 	}
+	public void cheatBarLock(){
+		size_lock=size;
+		cheatBar_locked.localScale=new Vector3(size_lock, 1f);
+	}
 	void Update(){
 		if(cheating && (Input.GetKey("space"))){
 			if(size<1f){
@@ -30,7 +39,7 @@ public class CheatBar : MonoBehaviour
 			}
 		}
 		else{
-			if(size>0.01f){
+			if(size>0.01f && size>size_lock){
 				size=size-0.001f;
 			}
 		}

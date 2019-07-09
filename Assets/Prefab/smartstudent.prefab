@@ -172,28 +172,48 @@ PrefabInstance:
     - target: {fileID: 8055280129352174803, guid: 449fef29f1df5f240935d29dded07087,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.19999999
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 8055280129352174803, guid: 449fef29f1df5f240935d29dded07087,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.19999999
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 8055280129352174803, guid: 449fef29f1df5f240935d29dded07087,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.19999999
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 5196050505957544910, guid: 449fef29f1df5f240935d29dded07087,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f190fd2f34f84e948b40457a18c898ea,
+      objectReference: {fileID: 21300000, guid: 164c8df086e9cc447af362d5d88c0c0c,
         type: 3}
     - target: {fileID: 5196050505957544910, guid: 449fef29f1df5f240935d29dded07087,
         type: 3}
       propertyPath: m_SortingOrder
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196050505957544910, guid: 449fef29f1df5f240935d29dded07087,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196050505957544910, guid: 449fef29f1df5f240935d29dded07087,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196050505957544910, guid: 449fef29f1df5f240935d29dded07087,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196050505957544910, guid: 449fef29f1df5f240935d29dded07087,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 449fef29f1df5f240935d29dded07087, type: 3}

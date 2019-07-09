@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6898327966949381478}
   - component: {fileID: 6898327966949381473}
   m_Layer: 0
-  m_Name: Teacher
+  m_Name: teacher_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6898327966949381472}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 3.62, y: 1.8, z: -0.2602328}
-  m_LocalScale: {x: 0.176, y: 0.176, z: 0.176}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_Children:
   - {fileID: 6898327967044712032}
   m_Father: {fileID: 0}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bc3ba07da53c7e947b936c98b194116c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 61d6c5441f995084b890d58540b87712, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -117,9 +117,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.052237514}
   serializedVersion: 2
-  m_Radius: 2.2449996
+  m_Radius: 0.6953028
 --- !u!114 &6898327966949381473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,7 +158,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  currentSpot: 0
+  currentSpot: 2
   movable: 1
   doPanning: 1
   turnSpeed: 7
@@ -191,8 +191,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6898327967044712035}
   m_LocalRotation: {x: -1, y: -0, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 14.2, z: 0}
-  m_LocalScale: {x: 10.15625, y: 27.368752, z: 5.681818}
+  m_LocalPosition: {x: 0, y: 4.5, z: 0}
+  m_LocalScale: {x: 2.5, y: 7.5, z: 1}
   m_Children: []
   m_Father: {fileID: 6898327966949381477}
   m_RootOrder: 0

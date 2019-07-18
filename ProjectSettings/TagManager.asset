@@ -8,6 +8,8 @@ TagManager:
   - rotateRight
   - skip
   - smartstudent
+  - Invigilator
+  - MainCanvas
   layers:
   - Default
   - TransparentFX

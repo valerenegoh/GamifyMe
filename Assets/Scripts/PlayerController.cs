@@ -33,4 +33,8 @@ public class PlayerController : MonoBehaviour{
         }
     }
 
+    public void FreezeMovement()
+    {
+        movable = false;
+    }
 }

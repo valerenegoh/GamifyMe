@@ -16,22 +16,19 @@ public class TeacherNPC : MonoBehaviour
     public int numCol = 5;
     public int numRow = 3;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
     // Update is called once per frame
     void Update()
-    {
-      if(Vector2.Distance(transform.position, moveSpots[currentSpot].position) < 0.2f){
+    { if(movable)
+      {
+        if(Vector2.Distance(transform.position, moveSpots[currentSpot].position) < 0.2f){
           choseNextSpot();
+        }
+        Transform target = moveSpots[currentSpot];
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        Vector2 dir = target.position - transform.position; 
+        // transform.up = dir;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, dir), Time.fixedDeltaTime * turnSpeed);
       }
-      Transform target = moveSpots[currentSpot];
-      transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-      Vector2 dir = target.position - transform.position; 
-      // transform.up = dir;
-      transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, dir), Time.fixedDeltaTime * turnSpeed);
     }
 
     void choseNextSpot(){
@@ -51,5 +48,10 @@ public class TeacherNPC : MonoBehaviour
       //   Debug.Log(i);
       // }
       currentSpot = possibleSpots[Random.Range(0, possibleSpots.Count)];
+    }
+
+    public void FreezeMovement()
+    {
+        movable = false;
     }
 }

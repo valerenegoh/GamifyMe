@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 3200232323499463959}
   m_Layer: 0
   m_Name: teacher_2
-  m_TagString: Untagged
+  m_TagString: Invigilator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

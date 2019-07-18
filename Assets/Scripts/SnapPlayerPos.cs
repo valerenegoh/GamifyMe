@@ -45,7 +45,8 @@ public class SnapPlayerPos : MonoBehaviour
 				
 				// If above benchmark wins
 				if(CheatBar_English.size >= 0.3f && CheatBar_Math.size >= 0.3f && CheatBar_Science.size>= 0.3f){
-					GameManager.instance.Result("YOU WIN!");
+					LevelControl.instance.youWin();
+					// GameManager.instance.Result("YOU WIN!");
 				}
 			}
 		}

@@ -24,14 +24,11 @@ public class TeacherNPC : MonoBehaviour
         Transform target = moveSpots[currentSpot];
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         Vector2 dir = target.position - transform.position; 
-        // transform.up = dir;
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, dir), Time.fixedDeltaTime * turnSpeed);
       }
     }
 
     void choseNextSpot(){
-      //possible spots
-      // Debug.Log("current: " + currentSpot);
       List<int> possibleSpots = new List<int>();
       int total = (numRow+1)*(numCol+1);
       int up = currentSpot-numCol-1 ;
@@ -42,9 +39,7 @@ public class TeacherNPC : MonoBehaviour
       if (right%(numCol+1) != 0 && right<total){  possibleSpots.Add(right);}
       if(up > 0){ possibleSpots.Add(up); } 
       if(down <total){ possibleSpots.Add(down);} 
-      // foreach (int i in possibleSpots){
-      //   Debug.Log(i);
-      // }
+
       currentSpot = possibleSpots[Random.Range(0, possibleSpots.Count)];
     }
 

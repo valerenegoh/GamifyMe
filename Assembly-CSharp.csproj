@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CheatBar.cs" />
      <Compile Include="Assets\Scripts\CheatingPopup.cs" />
+     <Compile Include="Assets\Scripts\CoolDowns.cs" />
      <Compile Include="Assets\Scripts\LevelControl.cs" />
      <Compile Include="Assets\Scripts\MainMenuControl.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />

@@ -10,6 +10,7 @@ TagManager:
   - smartstudent
   - Invigilator
   - MainCanvas
+  - Disappear
   layers:
   - Default
   - TransparentFX

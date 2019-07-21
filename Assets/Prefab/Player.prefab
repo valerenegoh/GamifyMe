@@ -134,3 +134,12 @@ MonoBehaviour:
   moveSpeed: 3
   turnSpeed: 100
   movable: 1
+  mistCoolDownValue: 10
+  mistIsCooling: 0
+  mistCooldownImg: {fileID: 0}
+  dashCoolDownValue: 5
+  dashIsCooling: 0
+  dashCooldownImg: {fileID: 0}
+  fcopyCoolDownValue: 15
+  fcopyIsCooling: 0
+  fcopyCooldownImg: {fileID: 0}

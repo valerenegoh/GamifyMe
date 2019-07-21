@@ -8,10 +8,12 @@ public class PlayerController : MonoBehaviour{
 	public float moveSpeed;
 	public float turnSpeed;
     public bool movable = true;
+    public static Vector3 mySeat;
 
     // Start is called before the first frame update
     void Start(){
         player = GetComponent<Rigidbody2D>();
+        mySeat = player.transform.position;
     }
 
     // Update is called once per frame
@@ -33,8 +35,7 @@ public class PlayerController : MonoBehaviour{
         }
     }
 
-    public void FreezeMovement()
-    {
+    public void FreezeMovement(){
         movable = false;
     }
 }

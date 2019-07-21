@@ -39,16 +39,12 @@ public class LevelControl : MonoBehaviour
         levelPassed = PlayerPrefs.GetInt("LevelPassed");
     }
 
-    public void youWin()
-    {
-        if(sceneIndex==5)
-        {
+    public void youWin(){
+        if(sceneIndex==5){
             Invoke("LoadMainMenu", 1f);
         }
-        else
-        {
-            if(levelPassed < sceneIndex)
-            {
+        else{
+            if(levelPassed < sceneIndex){
                 PlayerPrefs.SetInt("LevelPassed", sceneIndex);
             }
             endGamePanel.gameObject.SetActive(true);
@@ -56,43 +52,38 @@ public class LevelControl : MonoBehaviour
             restartButton.gameObject.SetActive(false);
             gameHasEnded = true;
             player.GetComponent<PlayerController>().FreezeMovement();
-            foreach (GameObject invigilator in invigilators)
-            {
+            
+            foreach (GameObject invigilator in invigilators){
                 invigilator.GetComponent<TeacherNPC>().FreezeMovement();
             }
         }
     }
 
-    public void youLose()
-    {
+    public void youLose(){
         endGamePanel.gameObject.SetActive(true);
         youWinText.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
         gameHasEnded = true;
         player.GetComponent<PlayerController>().FreezeMovement();
-        foreach (GameObject invigilator in invigilators)
-            {
+
+        foreach (GameObject invigilator in invigilators){
                 invigilator.GetComponent<TeacherNPC>().FreezeMovement();
             }
     }
 
-    public void loadNextLevel()
-    {
+    public void loadNextLevel(){
         SceneManager.LoadScene(sceneIndex + 1);
     }
 
-    public void loadMainMenu()
-    {
+    public void loadMainMenu(){
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void loadSameLevel()
-    {
+    public void loadSameLevel(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public bool getGameStatus()
-    {
+    public bool getGameStatus(){
         return gameHasEnded;
     }
 }

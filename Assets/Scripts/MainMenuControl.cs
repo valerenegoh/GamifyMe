@@ -4,22 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MainMenuControl : MonoBehaviour
-{
+public class MainMenuControl : MonoBehaviour{
+
     public Button level02Button, level03Button, level04Button, level05Button;
     int levelPassed;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         levelPassed = PlayerPrefs.GetInt("LevelPassed");
         level02Button.interactable = false;
         level03Button.interactable = false;
         level04Button.interactable = false;
         level05Button.interactable = false;
 
-        switch(levelPassed)
-        {
+        switch(levelPassed){
             case 1:
                 level02Button.interactable = true;
                 break;
@@ -41,13 +39,11 @@ public class MainMenuControl : MonoBehaviour
         }
     }
 
-    public void levelToLoad (int level)
-    {
+    public void levelToLoad (int level){
         SceneManager.LoadScene(level);
     }
 
-    public void resetPlayerPrefs()
-    {
+    public void resetPlayerPrefs(){
         level02Button.interactable = false;
         level03Button.interactable = false;
         level04Button.interactable = false;

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnapPlayerPos : MonoBehaviour
-{
+public class SnapPlayerPos : MonoBehaviour{
+	
 	public float x;
 	public float y;
 	private GameObject Player;
@@ -14,8 +14,7 @@ public class SnapPlayerPos : MonoBehaviour
 	private CheatBar CheatBar_Science;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
     	Player = GameObject.Find("Player");
       	PlayerController=Player.GetComponent<PlayerController>();
 		ExamBar = GameObject.Find("cheatbar (english)");
@@ -27,8 +26,7 @@ public class SnapPlayerPos : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
 
     }
 
@@ -46,7 +44,6 @@ public class SnapPlayerPos : MonoBehaviour
 				// If above benchmark wins
 				if(CheatBar_English.size >= 0.3f && CheatBar_Math.size >= 0.3f && CheatBar_Science.size>= 0.3f){
 					LevelControl.instance.youWin();
-					// GameManager.instance.Result("YOU WIN!");
 				}
 			}
 		}

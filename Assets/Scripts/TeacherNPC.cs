@@ -17,9 +17,7 @@ public class TeacherNPC : MonoBehaviour
     public int numRow = 3;
 
     // Update is called once per frame
-    void Update()
-    { if(movable)
-      {
+    void Update(){ if(movable){
         if(Vector2.Distance(transform.position, moveSpots[currentSpot].position) < 0.2f){
           choseNextSpot();
         }
@@ -50,8 +48,7 @@ public class TeacherNPC : MonoBehaviour
       currentSpot = possibleSpots[Random.Range(0, possibleSpots.Count)];
     }
 
-    public void FreezeMovement()
-    {
+    public void FreezeMovement(){
         movable = false;
     }
 }

@@ -7,6 +7,7 @@ public class CheatBar : MonoBehaviour
 	private Transform cheatBar;
 	public float size;
 	private float size_lock;
+	public static bool fastCopy=false;
 	private Transform cheatBar_locked;
 
 	// Start is called before the first frame update
@@ -22,7 +23,11 @@ public class CheatBar : MonoBehaviour
 
 	public void playerCheating(){
 		if(size<1f){
-			size=size+0.005f;
+			if(fastCopy){
+				size=size+0.03f;
+			}else{
+				size=size+0.005f;
+			}
 		}
 		cheatBar.localScale=new Vector3(size, 1f);
 	}

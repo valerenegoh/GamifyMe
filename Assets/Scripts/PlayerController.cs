@@ -105,6 +105,8 @@ public class PlayerController : MonoBehaviour{
 
     public IEnumerator FastCopy(){
         fcopyIsCooling = true;
+		CheatBar.fastCopy=true;
         yield return new WaitForSeconds(3f);
+		CheatBar.fastCopy=false;
     }
 }

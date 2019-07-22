@@ -17,7 +17,10 @@ public class TeacherSight : MonoBehaviour
     void OnTriggerEnter2D (Collider2D other){
         if (other.gameObject.tag == "Player"){
             if(other.gameObject.transform.position != PlayerController.mySeat){
-                LevelControl.instance.youLose();
+				// If in SnapPosition ignore. 
+				if(!SnapPlayerPos.inSnapPos){
+                	LevelControl.instance.youLose();
+				}
             }
         }
     }

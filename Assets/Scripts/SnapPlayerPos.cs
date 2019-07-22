@@ -12,6 +12,7 @@ public class SnapPlayerPos : MonoBehaviour{
 	private CheatBar CheatBar_English;
 	private CheatBar CheatBar_Math;
 	private CheatBar CheatBar_Science;
+	public static bool inSnapPos=true;
 
     // Start is called before the first frame update
     void Start(){
@@ -41,13 +42,18 @@ public class SnapPlayerPos : MonoBehaviour{
 				CheatBar_Science.cheatBarLock();
 				CheatBar_Math.cheatBarLock();
 				
+				// Immune to TeacherSight
+				inSnapPos=true;
+				
 				// If above benchmark wins
 				if(CheatBar_English.size >= 0.3f && CheatBar_Math.size >= 0.3f && CheatBar_Science.size>= 0.3f){
 					LevelControl.instance.youWin();
 				}
 			}
 		}
-
+	void OnTriggerExit2D(Collider2D other){
+		inSnapPos=false;
+	}
 	IEnumerator Freeze(float time){
 		PlayerController.movable = false;
 		yield return new WaitForSeconds(time);

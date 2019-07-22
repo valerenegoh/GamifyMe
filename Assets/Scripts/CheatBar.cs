@@ -5,15 +5,17 @@ using UnityEngine;
 public class CheatBar : MonoBehaviour
 {
 	private Transform cheatBar;
+	private SpriteRenderer cheatBar_renderer;
 	public float size;
 	private float size_lock;
 	public static bool fastCopy=false;
 	private Transform cheatBar_locked;
-
+	private bool flashBool=false;
 	// Start is called before the first frame update
 	void Start()
 	{
 		cheatBar=transform.Find("bar");
+		cheatBar_renderer=cheatBar.GetComponentInChildren<SpriteRenderer>();
 		cheatBar_locked=transform.Find("bar_locked");
 		size=0f;
 		size_lock=0f;
@@ -34,8 +36,20 @@ public class CheatBar : MonoBehaviour
 	public void playerNotCheating(){
 		if(size>0.01f && size>size_lock){
 			size=size-0.001f;
+			if(!flashBool){
+				StartCoroutine(flashingCheatBar());
+			}
 		}
 		cheatBar.localScale=new Vector3(size, 1f);
+
+	}
+	private IEnumerator flashingCheatBar(){
+		cheatBar_renderer.color = new Color32(160, 255, 160, 255);
+		flashBool=true;
+		yield return new WaitForSeconds(0.1f);
+		cheatBar_renderer.color = new Color32(134, 255,59, 255);
+		yield return new WaitForSeconds(0.3f);
+		flashBool=false;
 	}
 	public void cheatBarLock(){
 		size_lock=size;

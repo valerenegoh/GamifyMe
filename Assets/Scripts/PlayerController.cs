@@ -36,7 +36,9 @@ public class PlayerController : MonoBehaviour{
     void Update(){
         // Mist power
         if(Input.GetKeyDown(KeyCode.Q)){
-            StartCoroutine(Mistify());
+            if(!mistIsCooling){
+                StartCoroutine(Mistify());
+            }  
         }
         if(mistIsCooling){
             mistCooldownImg.fillAmount += 1/mistCoolDownValue * Time.deltaTime;
@@ -48,7 +50,9 @@ public class PlayerController : MonoBehaviour{
 
         // Dash power
         if(Input.GetKeyDown(KeyCode.W)){
-            StartCoroutine(Dash());
+            if(!dashIsCooling){
+                StartCoroutine(Dash());
+            }  
         }
         if(dashIsCooling){
             dashCooldownImg.fillAmount += 1/dashCoolDownValue * Time.deltaTime;
@@ -60,7 +64,9 @@ public class PlayerController : MonoBehaviour{
 
         // Fast Copy power
         if(Input.GetKeyDown(KeyCode.E)){
-            StartCoroutine(FastCopy());
+            if(!fcopyIsCooling){
+                StartCoroutine(FastCopy());
+            }  
         }
         if(fcopyIsCooling){
             fcopyCooldownImg.fillAmount += 1/fcopyCoolDownValue * Time.deltaTime;

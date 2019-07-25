@@ -4,23 +4,13 @@ using UnityEngine;
 
 public class TeacherSight : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start(){
-
-    }
-
-    // Update is called once per frame
-    void Update(){
-
-    }
-
     void OnTriggerEnter2D (Collider2D other){
         if (other.gameObject.tag == "Player"){
             if(other.gameObject.transform.position != PlayerController.mySeat){
-				// If in SnapPosition ignore. 
-				if(!SnapPlayerPos.inSnapPos){
-                	LevelControl.instance.youLose();
-				}
+      				if(!SnapPlayerPos.inSnapPos){
+
+              	LevelControl.instance.youLose();
+      				}
             }
         }
     }

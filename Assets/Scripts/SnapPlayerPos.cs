@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SnapPlayerPos : MonoBehaviour{
-	
+
 	public float x;
 	public float y;
 	private GameObject Player;
@@ -17,13 +17,13 @@ public class SnapPlayerPos : MonoBehaviour{
     // Start is called before the first frame update
     void Start(){
     	Player = GameObject.Find("Player");
-      	PlayerController=Player.GetComponent<PlayerController>();
-		ExamBar = GameObject.Find("cheatbar (english)");
-		CheatBar_English = ExamBar.GetComponent<CheatBar>();
-		ExamBar = GameObject.Find("cheatbar (math)");
-		CheatBar_Math = ExamBar.GetComponent<CheatBar>();
-		ExamBar = GameObject.Find("cheatbar (science)");
-		CheatBar_Science = ExamBar.GetComponent<CheatBar>();
+    	PlayerController=Player.GetComponent<PlayerController>();
+			ExamBar = GameObject.Find("cheatbar (english)");
+			CheatBar_English = ExamBar.GetComponent<CheatBar>();
+			ExamBar = GameObject.Find("cheatbar (math)");
+			CheatBar_Math = ExamBar.GetComponent<CheatBar>();
+			ExamBar = GameObject.Find("cheatbar (science)");
+			CheatBar_Science = ExamBar.GetComponent<CheatBar>();
     }
 
     // Update is called once per frame
@@ -36,15 +36,15 @@ public class SnapPlayerPos : MonoBehaviour{
 				StartCoroutine(Freeze(1f));
 				other.transform.eulerAngles = new Vector3(0,0,0);
 				other.transform.position = new Vector3(x, y, 0);
-				
-				// Locks the cheatbar 
+
+				// Locks the cheatbar
 				CheatBar_English.cheatBarLock();
 				CheatBar_Science.cheatBarLock();
 				CheatBar_Math.cheatBarLock();
-				
+
 				// Immune to TeacherSight
 				inSnapPos=true;
-				
+
 				// If above benchmark wins
 				if(CheatBar_English.size >= 0.3f && CheatBar_Math.size >= 0.3f && CheatBar_Science.size>= 0.3f){
 					LevelControl.instance.youWin();

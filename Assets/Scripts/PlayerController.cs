@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour{
 	private Rigidbody2D player;
+    private Animator anim;
 
 	public float moveSpeed = 3;
 	public float turnSpeed = 100;
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour{
     public bool mistIsCooling;
     public Image mistCooldownImg;
 
+    public bool isDashing;
     public float dashCoolDownValue = 5;
     public bool dashIsCooling;
     public Image dashCooldownImg;
@@ -26,6 +28,8 @@ public class PlayerController : MonoBehaviour{
     // Start is called before the first frame update
     void Start(){
         player = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+
         mySeat = player.transform.position;
         mistCooldownImg.fillAmount = 0;
         dashCooldownImg.fillAmount = 0;
@@ -34,6 +38,42 @@ public class PlayerController : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
+       if(!movable){
+            anim.SetBool("isDashing", false);
+            anim.SetBool("isWalking", false);
+        }   
+        if(movable){
+            if(!isDashing){
+                anim.SetBool("isDashing", false);
+            }
+
+            float moveHorizontal = Input.GetAxis ("Horizontal");
+            float moveVertical = Input.GetAxis ("Vertical");
+
+            // set animation to idle
+            if(moveHorizontal == 0 && moveVertical == 0){
+                if(isDashing){
+                    anim.SetBool("isDashing", false);
+                } else{
+                    anim.SetBool("isWalking", false);
+                }
+            } else{
+                if(isDashing){
+                    anim.SetBool("isDashing", true);
+                } else{
+                    anim.SetBool("isWalking", true);
+                }
+            }
+
+            Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
+            //move body
+            transform.Translate (movement * moveSpeed * Time.deltaTime, Space.World);
+            //rotate body
+            if (movement != Vector2.zero) {
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, movement), Time.fixedDeltaTime * turnSpeed);
+            }
+        }
+
         // Mist power
         if(Input.GetKeyDown(KeyCode.Q)){
             if(!mistIsCooling){
@@ -77,20 +117,6 @@ public class PlayerController : MonoBehaviour{
         }
     }
 
-    void FixedUpdate(){
-        if(movable){
-        	float moveHorizontal = Input.GetAxis ("Horizontal");
-        	float moveVertical = Input.GetAxis ("Vertical");
-        	Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
-            //move body
-        	transform.Translate (movement * moveSpeed * Time.deltaTime, Space.World);
-            //rotate body
-        	if (movement != Vector2.zero) {
-             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, movement), Time.fixedDeltaTime * turnSpeed);
-        	}
-        }
-    }
-
     public void FreezeMovement(){
         movable = false;
     }
@@ -98,15 +124,19 @@ public class PlayerController : MonoBehaviour{
     public IEnumerator Mistify(){
         mistIsCooling = true;
         player.tag = "Disappear";
+        anim.SetBool("isMisting", true);
         yield return new WaitForSeconds(3f);
         player.tag = "Player";
+        anim.SetBool("isMisting", false);
     }
 
     public IEnumerator Dash(){
         dashIsCooling = true;
-        moveSpeed = 10;
+        moveSpeed = 5;
+        isDashing = true;
         yield return new WaitForSeconds(3f);
         moveSpeed = 3;
+        isDashing = false;
     }
 
     public IEnumerator FastCopy(){

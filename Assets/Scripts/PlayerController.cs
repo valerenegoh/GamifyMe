@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour{
 
         // Mist power
         if(Input.GetKeyDown(KeyCode.Q)){
-            if(!mistIsCooling){
+            if(!mistIsCooling && !isDashing && !isCopying){
                 StartCoroutine(Mistify());
             }  
         }
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour{
 
         // Dash power
         if(Input.GetKeyDown(KeyCode.W)){
-            if(!dashIsCooling){
+            if(!dashIsCooling && !isMisting && !isCopying){
                 StartCoroutine(Dash());
             }  
         }
@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour{
 
         // Fast Copy power
         if(Input.GetKeyDown(KeyCode.E)){
-            if(!fcopyIsCooling){
+            if(!fcopyIsCooling && !isMisting && !isDashing){
                 StartCoroutine(FastCopy());
             }  
         }
@@ -142,7 +142,9 @@ public class PlayerController : MonoBehaviour{
     public IEnumerator FastCopy(){
         fcopyIsCooling = true;
 		CheatBar.fastCopy=true;
+        anim.SetBool("isCopying", true);
         yield return new WaitForSeconds(3f);
 		CheatBar.fastCopy=false;
+        anim.SetBool("isCopying", false);
     }
 }

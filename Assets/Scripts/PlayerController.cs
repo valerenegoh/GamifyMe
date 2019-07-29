@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour{
         }
 
         // Fast Copy power
-        if(Input.GetKeyDown(KeyCode.E)){
+        if(Input.GetKeyDown(KeyCode.E) && !isMisting && !isDashing){
             if(!fcopyIsCooling && !isMisting && !isDashing){
                 StartCoroutine(FastCopy());
             }  

@@ -18,7 +18,7 @@ public class LevelControl : MonoBehaviour
     private Text gameOverText, youWinText, timerTextUI, scoreTextUI, scoreHighestTextUI, playerTitleText;
     private double score;
     private int scoreInt;
-    int sceneIndex, levelPassed;
+    public int sceneIndex, levelPassed;
 
     public int optimalTimeForThirdStar = 30;
     public float optimalBarForSecondStar = 0.5f;
@@ -61,6 +61,7 @@ public class LevelControl : MonoBehaviour
 
         //scenes
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log("level control's scene index: "+sceneIndex);
         levelPassed = PlayerPrefs.GetInt("LevelPassed");
 
         //exam bars
@@ -73,10 +74,10 @@ public class LevelControl : MonoBehaviour
     }
 
     public void youWin(){
-        if(sceneIndex==5){
-            Invoke("LoadMainMenu", 1f);
-        }
-        else{
+        // if(sceneIndex==4){
+        //     Invoke("LoadMainMenu", 1f);
+        // }
+        // else{
             if(levelPassed < sceneIndex){
                 PlayerPrefs.SetInt("LevelPassed", sceneIndex);
             }
@@ -122,7 +123,7 @@ public class LevelControl : MonoBehaviour
             foreach (GameObject invigilator in invigilators){
                 invigilator.GetComponent<TeacherNPC>().FreezeMovement();
             }
-        }
+        // }
     }
 
     public void youLose(){
@@ -140,8 +141,8 @@ public class LevelControl : MonoBehaviour
             }
     }
 
-    public void loadNextLevel(){
-        SceneManager.LoadScene(sceneIndex + 1);
+    public void loadNextLevel(int level){
+        SceneManager.LoadScene(level);
     }
 
     public void loadMainMenu(){

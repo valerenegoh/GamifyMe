@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour{
     public bool fcopyIsCooling;
     public Image fcopyCooldownImg;
 
+    public bool unlockMist = false;
+    public bool unlockDash = false;
+    public bool unlcokFCopy = false;
+
     // Start is called before the first frame update
     void Start(){
         player = GetComponent<Rigidbody2D>();
@@ -75,7 +79,7 @@ public class PlayerController : MonoBehaviour{
         }
 
         // Mist power
-        if(Input.GetKeyDown(KeyCode.Q)){
+        if(Input.GetKeyDown(KeyCode.Q) && unlockMist){
             if(!mistIsCooling && !dashIsCooling && !fcopyIsCooling){
                 StartCoroutine(Mistify());
             }  
@@ -89,7 +93,7 @@ public class PlayerController : MonoBehaviour{
         }
 
         // Dash power
-        if(Input.GetKeyDown(KeyCode.W)){
+        if(Input.GetKeyDown(KeyCode.W) && unlockDash){
             if(!dashIsCooling && !mistIsCooling && !fcopyIsCooling){
                 StartCoroutine(Dash());
             }  
@@ -103,7 +107,7 @@ public class PlayerController : MonoBehaviour{
         }
 
         // Fast Copy power
-        if(Input.GetKeyDown(KeyCode.E)){
+        if(Input.GetKeyDown(KeyCode.E) && unlcokFCopy){
             if(!fcopyIsCooling && !mistIsCooling && !dashIsCooling){
                 StartCoroutine(FastCopy());
             }  

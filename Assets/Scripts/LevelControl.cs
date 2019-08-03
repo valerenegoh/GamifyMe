@@ -10,10 +10,11 @@ public class LevelControl : MonoBehaviour
     public bool gameHasEnded = false;
     private GameObject endGamePanel, restartButton, nextButton, star1, star2, star3;
     private GameObject player;
-    private GameObject ExamBar;
-    private CheatBar CheatBar_English;
-  	private CheatBar CheatBar_Math;
-  	private CheatBar CheatBar_Science;
+    // private GameObject ExamBar;
+    // private CheatBar CheatBar_English;
+  	// private CheatBar CheatBar_Math;
+  	// private CheatBar CheatBar_Science;
+    public List<GameObject> CheatBars;
     private GameObject[] invigilators;
     private Text gameOverText, youWinText, timerTextUI, scoreTextUI, scoreHighestTextUI, playerTitleText;
     private double score;
@@ -65,12 +66,12 @@ public class LevelControl : MonoBehaviour
         levelPassed = PlayerPrefs.GetInt("LevelPassed");
 
         //exam bars
-        ExamBar = GameObject.Find("cheatbar (english)");
-        CheatBar_English = ExamBar.GetComponent<CheatBar>();
-        ExamBar = GameObject.Find("cheatbar (math)");
-        CheatBar_Math = ExamBar.GetComponent<CheatBar>();
-        ExamBar = GameObject.Find("cheatbar (science)");
-        CheatBar_Science = ExamBar.GetComponent<CheatBar>();
+        // ExamBar = GameObject.Find("cheatbar (english)");
+        // CheatBar_English = ExamBar.GetComponent<CheatBar>();
+        // ExamBar = GameObject.Find("cheatbar (math)");
+        // CheatBar_Math = ExamBar.GetComponent<CheatBar>();
+        // ExamBar = GameObject.Find("cheatbar (science)");
+        // CheatBar_Science = ExamBar.GetComponent<CheatBar>();
     }
 
     public void youWin(){
@@ -83,7 +84,27 @@ public class LevelControl : MonoBehaviour
             }
 
             //score
-            score = CheatBar_English.size*30 + CheatBar_Math.size*30 + CheatBar_Science.size*30 + int.Parse(timerTextUI.text)*0.3;
+            float barScoresTotal = 0;
+            int numberOfBars = 0;
+            var firstStarCheckMeet = true;
+            var secondStarCheckMeet = true;
+            foreach(GameObject CheatBar in CheatBars)
+            {
+              numberOfBars+=1;
+            }
+            foreach(GameObject CheatBar in CheatBars)
+            {
+              CheatBar CheatBar_Item = CheatBar.GetComponent<CheatBar>();
+              Debug.Log(CheatBar_Item.size);
+              barScoresTotal += CheatBar_Item.size*(90/numberOfBars);
+              if(CheatBar_Item.size < 0.3f){
+                firstStarCheckMeet = false;
+              }
+              if(CheatBar_Item.size < optimalBarForSecondStar){
+                secondStarCheckMeet = false;
+              }
+            }
+            score = barScoresTotal + int.Parse(timerTextUI.text)*0.3;
             scoreInt = (int) score;
             scoreTextUI.text = "Score: " + scoreInt;
 
@@ -92,18 +113,17 @@ public class LevelControl : MonoBehaviour
               youWinText.text = "NEW RECORD!";
               PlayerPrefs.SetInt("HighestScore"+sceneIndex, scoreInt);
             }
-
             scoreHighestTextUI.text = "Highest Score: " + PlayerPrefs.GetInt("HighestScore"+sceneIndex);
 
             // star scoring system
-            if(CheatBar_English.size >= 0.3f && CheatBar_Math.size >= 0.3f && CheatBar_Science.size>= 0.3f){
+            if(firstStarCheckMeet){
               playerTitleText.text = "Common Cheater";
               star1.gameObject.SetActive(true);
-    				}
-            if(CheatBar_English.size >= optimalBarForSecondStar && CheatBar_Math.size >= optimalBarForSecondStar && CheatBar_Science.size>= optimalBarForSecondStar){
+            }
+            if(secondStarCheckMeet){
               playerTitleText.text = "Pro Cheater";
               star2.gameObject.SetActive(true);
-    				}
+            }
             if(int.Parse(timerTextUI.text) >= optimalTimeForThirdStar){
               if(star2.gameObject.activeSelf){
                 playerTitleText.text = "Master Cheater";

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SnapPlayerPos : MonoBehaviour{
 
-	public float x;
-	public float y;
+	public float x;  // player's original x position
+	public float y;  // player's original y position
 	private GameObject Player;
 	// private GameObject ExamBar;
 	private PlayerController PlayerController;

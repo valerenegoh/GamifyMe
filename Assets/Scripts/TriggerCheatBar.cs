@@ -71,6 +71,4 @@ public class TriggerCheatBar : MonoBehaviour
 		}
 	}
 
-
-
 }

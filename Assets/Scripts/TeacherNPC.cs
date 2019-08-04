@@ -19,8 +19,13 @@ public class TeacherNPC : MonoBehaviour
     // Update is called once per frame
     void Update(){ 
       if(movable){
+        //if teacher reaches the targetted spot
         if(Vector2.Distance(transform.position, moveSpots[currentSpot].position) < 0.2f){
-          choseNextSpot();
+          // choseNextSpot();
+          currentSpot++;
+          if(currentSpot == moveSpots.Length){
+            currentSpot = 0;
+          }
         }
         Transform target = moveSpots[currentSpot];
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
@@ -29,20 +34,20 @@ public class TeacherNPC : MonoBehaviour
       }
     }
 
-    void choseNextSpot(){
-      List<int> possibleSpots = new List<int>();
-      int total = (numRow+1)*(numCol+1);
-      int up = currentSpot-numCol-1 ;
-      int down = currentSpot+numCol+1;
-      int left = currentSpot-1;
-      int right = currentSpot+1;
-      if((left+1)%(numCol+1) != 0 && left>0 || left == 0){ possibleSpots.Add(left);} 
-      if (right%(numCol+1) != 0 && right<total){  possibleSpots.Add(right);}
-      if(up > 0){ possibleSpots.Add(up); } 
-      if(down <total){ possibleSpots.Add(down);} 
+    // void choseNextSpot(){
+    //   List<int> possibleSpots = new List<int>();
+    //   int total = (numRow+1)*(numCol+1);
+    //   int up = currentSpot-numCol-1 ;
+    //   int down = currentSpot+numCol+1;
+    //   int left = currentSpot-1;
+    //   int right = currentSpot+1;
+    //   if((left+1)%(numCol+1) != 0 && left>0 || left == 0){ possibleSpots.Add(left);} 
+    //   if (right%(numCol+1) != 0 && right<total){  possibleSpots.Add(right);}
+    //   if(up > 0){ possibleSpots.Add(up); } 
+    //   if(down <total){ possibleSpots.Add(down);} 
 
-      currentSpot = possibleSpots[Random.Range(0, possibleSpots.Count)];
-    }
+    //   currentSpot = possibleSpots[Random.Range(0, possibleSpots.Count)];
+    // }
 
     public void FreezeMovement(){
         movable = false;

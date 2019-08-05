@@ -55,7 +55,7 @@ public class TriggerCheatBar : MonoBehaviour
 			cheatBarScript.playerCheating();
 			// Put cheating animation here
 			string cheatingText="";
-			if (timerDelay>0.5f){
+			if (timerDelay>1.5f){
 				cheatingText=cheatingPopupString[loop];
 				if(loop<cheatingPopupString.Count-1){
 					loop++;

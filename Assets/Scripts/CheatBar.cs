@@ -11,10 +11,13 @@ public class CheatBar : MonoBehaviour
 	public static bool fastCopy=false;
 	private Transform cheatBar_locked;
 	private bool flashBool=false;
-	// Start is called before the first frame update
-	void Start()
+    AudioSource sound;
+    private bool triggerSoundBool=false;
+    // Start is called before the first frame update
+    void Start()
 	{
-		cheatBar=transform.Find("bar");
+        sound = gameObject.GetComponent<AudioSource>();
+        cheatBar =transform.Find("bar");
 		cheatBar_renderer=cheatBar.GetComponentInChildren<SpriteRenderer>();
 		cheatBar_locked=transform.Find("bar_locked");
 		size=0f;
@@ -23,9 +26,16 @@ public class CheatBar : MonoBehaviour
 		cheatBar_locked.localScale=new Vector3(0f, 1f);
 	}
 
-	public void playerCheating(){
+    public void playerCheating(){
 		if(size<1f){
-			if(fastCopy){
+            //playsound here
+            if (!triggerSoundBool)
+            {
+                sound.Play();
+                triggerSoundBool = true;
+            }
+            
+            if (fastCopy){
 				size=size+0.03f;
 			}else{
 				size=size+0.005f;
@@ -34,7 +44,13 @@ public class CheatBar : MonoBehaviour
 		cheatBar.localScale=new Vector3(size, 1f);
 	}
 	public void playerNotCheating(){
-		if(size>0.01f && size>size_lock){
+        //stopsound here
+        if (triggerSoundBool)
+        {
+            sound.Stop();
+            triggerSoundBool = false;
+        }
+        if (size>0.01f && size>size_lock){
 			size=size-0.001f;
 			if(!flashBool){
 				StartCoroutine(flashingCheatBar());

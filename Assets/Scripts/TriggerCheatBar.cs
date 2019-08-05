@@ -11,15 +11,18 @@ public class TriggerCheatBar : MonoBehaviour
 	float timerDelay;
 	int loop;
 
-	//Cheating Animation
-	[SerializeField] private Transform pfCheatingText;
+    //franticCopying Sound
+    bool toogleSound = false;
+
+    //Cheating Animation
+    [SerializeField] private Transform pfCheatingText;
 	public List<string> cheatingPopupString;
 
 
 	void Start(){
 		cheatBar= GameObject.Find(cheatBarName);
 		cheatBarScript=cheatBar.GetComponent<CheatBar>();
-		timerDelay=0f;
+        timerDelay =0f;
 		loop=0;
 	}
 	void OnTriggerEnter2D(Collider2D other){
@@ -33,6 +36,7 @@ public class TriggerCheatBar : MonoBehaviour
 	void OnTriggerExit2D(Collider2D other){
 		if(other.tag=="Player" || other.tag == "Disappear")
         {
+
 			cheatingRange=false;
 		}
 	}
@@ -53,8 +57,9 @@ public class TriggerCheatBar : MonoBehaviour
 		if(cheatingRange && (Input.GetKey("space"))){
 			// Cheating
 			cheatBarScript.playerCheating();
-			// Put cheating animation here
-			string cheatingText="";
+            // Frantic Copying
+
+            string cheatingText="";
 			if (timerDelay>1.5f){
 				cheatingText=cheatingPopupString[loop];
 				if(loop<cheatingPopupString.Count-1){

@@ -157,8 +157,13 @@ public class LevelControl : MonoBehaviour
         player.GetComponent<PlayerController>().FreezeMovement();
 
         foreach (GameObject invigilator in invigilators){
-                invigilator.GetComponent<TeacherNPC>().FreezeMovement();
-            }
+          if(invigilator.GetComponent<TeacherNPC>()){
+            invigilator.GetComponent<TeacherNPC>().FreezeMovement();
+          }
+          if(invigilator.GetComponent<TeacherRotation>()){
+            invigilator.GetComponent<TeacherRotation>().FreezeMovement();
+          }
+        }
     }
 
     public void loadNextLevel(int level){

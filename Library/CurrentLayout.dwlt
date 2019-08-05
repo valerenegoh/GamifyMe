@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 494}
   m_MaxSize: {x: 14004, y: 14044}
   vertical: 0
-  controlID: 96
+  controlID: 56
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 494}
   m_MaxSize: {x: 10002, y: 14044}
   vertical: 1
-  controlID: 97
+  controlID: 57
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 222}
   m_MaxSize: {x: 8006, y: 4022}
   vertical: 0
-  controlID: 98
+  controlID: 35
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -384,23 +384,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 48350000
+      m_SelectedIDs: 4c260000
       m_LastClickedID: 0
-      m_ExpandedIDs: 7625ffff2e2affffaa30ffff6235ffff9e5cffffd064ffffec64ffff7065ffffd86bffff806cffffa46cfffff26dffff1c6effff806effff046fffff8670ffff0671ffffa071ffffca71ffff3e72ffffc472ffff0a74ffff4879ffff9079ffffb279ffffac84ffff288bffffe08fffff5c96ffffa6aaffff54adffff1ab5ffff74b5ffff7cb5ffffceb5ffffa2baffff5abfffffd6c5ffff6aceffffbcceffff90d3ffffc0daffff20e0ffffa6e0ffff5ae1ffff84e7ffffc6ecffff86edffff64b0000088b00000feb3000054b400008ab400003eb600004ab90000deb90000
+      m_ExpandedIDs: 7eedffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: UI
-        m_OriginalName: UI
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -12612
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -572,20 +572,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\andre\Documents\UnityProjects\GamifyMe
+  m_LastProjectPath: C:\Users\Kenny\Desktop\gamifyme\GamifyMe
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6c350000
-    m_LastClickedID: 13676
-    m_ExpandedIDs: 000000000c350000083600000a3600004c37000074370000b2370000083a000000ca9a3b
+    m_SelectedIDs: 34370000
+    m_LastClickedID: 14132
+    m_ExpandedIDs: 0000000008350000083600000a3600004c37000074370000b2370000c43e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -613,7 +613,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000c350000083600000a3600004c37000074370000b2370000083a0000
+    m_ExpandedIDs: 0000000008350000083600000a3600004c37000074370000b2370000c43e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

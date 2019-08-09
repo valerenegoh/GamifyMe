@@ -14,20 +14,26 @@ public class PlayerController : MonoBehaviour{
 
     public float mistCoolDownValue = 10;
     public bool mistIsCooling;
+    public bool mistIsDone = true;
     public Image mistCooldownImg;
+    private AudioSource mistAudio; 
 
     public bool isDashing;
-    public float dashCoolDownValue = 5;
+    public float dashCoolDownValue = 7;
     public bool dashIsCooling;
+    public bool dashIsDone = true;
     public Image dashCooldownImg;
+    private AudioSource dashAudio; 
 
-    public float fcopyCoolDownValue = 15;
+    public float fcopyCoolDownValue = 5;
     public bool fcopyIsCooling;
+    public bool fcopyIsDone = true;
     public Image fcopyCooldownImg;
+    private AudioSource fcopyAudio; 
 
     public bool unlockMist = false;
     public bool unlockDash = false;
-    public bool unlcokFCopy = false;
+    public bool unlockFCopy = false;
 
     // Start is called before the first frame update
     void Start(){
@@ -38,6 +44,11 @@ public class PlayerController : MonoBehaviour{
         mistCooldownImg.fillAmount = 0;
         dashCooldownImg.fillAmount = 0;
         fcopyCooldownImg.fillAmount = 0;
+
+        AudioSource[] audios = GetComponents<AudioSource>();
+        mistAudio = audios[0];
+        dashAudio = audios[1];
+        fcopyAudio = audios[2];
     }
 
     // Update is called once per frame
@@ -80,7 +91,7 @@ public class PlayerController : MonoBehaviour{
 
         // Mist power
         if(Input.GetKeyDown(KeyCode.Q) && unlockMist){
-            if(!mistIsCooling && !dashIsCooling && !fcopyIsCooling){
+            if(!mistIsCooling && dashIsDone && fcopyIsDone){
                 StartCoroutine(Mistify());
             }  
         }
@@ -94,7 +105,7 @@ public class PlayerController : MonoBehaviour{
 
         // Dash power
         if(Input.GetKeyDown(KeyCode.W) && unlockDash){
-            if(!dashIsCooling && !mistIsCooling && !fcopyIsCooling){
+            if(!dashIsCooling && mistIsDone && fcopyIsDone){
                 StartCoroutine(Dash());
             }  
         }
@@ -107,8 +118,8 @@ public class PlayerController : MonoBehaviour{
         }
 
         // Fast Copy power
-        if(Input.GetKeyDown(KeyCode.E) && unlcokFCopy){
-            if(!fcopyIsCooling && !mistIsCooling && !dashIsCooling){
+        if(Input.GetKeyDown(KeyCode.E) && unlockFCopy){
+            if(!fcopyIsCooling && mistIsDone && dashIsDone){
                 StartCoroutine(FastCopy());
             }  
         }
@@ -126,28 +137,38 @@ public class PlayerController : MonoBehaviour{
     }
 
     public IEnumerator Mistify(){
+        anim.SetBool("isMisting", true);
+        mistAudio.Play();
+        mistIsDone = false;
+        unlockMist = true;
         mistIsCooling = true;
         player.tag = "Disappear";
-        anim.SetBool("isMisting", true);
         yield return new WaitForSeconds(3f);
+        mistIsDone = true;
         player.tag = "Player";
         anim.SetBool("isMisting", false);
     }
 
     public IEnumerator Dash(){
+        dashAudio.Play();
         dashIsCooling = true;
+        dashIsDone = false;
         moveSpeed = 5;
         isDashing = true;
         yield return new WaitForSeconds(3f);
+        dashIsDone = true;
         moveSpeed = 3;
         isDashing = false;
     }
 
     public IEnumerator FastCopy(){
+        anim.SetBool("isCopying", true);
+        fcopyAudio.Play();
+        fcopyIsDone = false;
         fcopyIsCooling = true;
 		CheatBar.fastCopy=true;
-        anim.SetBool("isCopying", true);
         yield return new WaitForSeconds(3f);
+        fcopyIsDone = true;
 		CheatBar.fastCopy=false;
         anim.SetBool("isCopying", false);
     }

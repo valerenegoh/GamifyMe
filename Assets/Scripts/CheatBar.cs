@@ -34,7 +34,7 @@ public class CheatBar : MonoBehaviour
                 sound.Play();
                 triggerSoundBool = true;
             }
-            
+
             if (fastCopy){
 				size=size+0.03f;
 			}else{

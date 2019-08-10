@@ -8,6 +8,8 @@ public class LevelControl : MonoBehaviour
 {
     public static LevelControl instance = null;
     public bool gameHasEnded = false;
+    AudioSource loseSound;
+    // public AudioClip winSound;
     private GameObject endGamePanel, restartButton, nextButton, star1, star2, star3;
     private GameObject player;
     // private GameObject ExamBar;
@@ -34,6 +36,8 @@ public class LevelControl : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        loseSound = gameObject.GetComponent<AudioSource>();
+        loseSound.Stop();
 
         //ui components
         gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
@@ -79,6 +83,7 @@ public class LevelControl : MonoBehaviour
         //     Invoke("LoadMainMenu", 1f);
         // }
         // else{
+            // winSound.Play();
             if(levelPassed < sceneIndex){
                 PlayerPrefs.SetInt("LevelPassed", sceneIndex);
             }
@@ -148,6 +153,7 @@ public class LevelControl : MonoBehaviour
 
     public void youLose(){
         //score
+        loseSound.Play();
         scoreTextUI.text = "Score: 0";
         scoreHighestTextUI.text = "Highest Score: " + PlayerPrefs.GetInt("HighestScore"+sceneIndex);
         endGamePanel.gameObject.SetActive(true);

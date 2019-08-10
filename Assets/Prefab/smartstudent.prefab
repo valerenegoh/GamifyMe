@@ -498,7 +498,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cheatBarName: 
-  pfCheatingText: {fileID: 0}
+  pfCheatingText: {fileID: 7093851675880632611, guid: 52f5e32a002271d47b7c101459fe6fa1,
+    type: 3}
   cheatingPopupString: []
 --- !u!1 &4408069828382959504
 GameObject:

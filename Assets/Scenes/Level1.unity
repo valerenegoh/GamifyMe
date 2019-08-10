@@ -2579,7 +2579,7 @@ PrefabInstance:
     - target: {fileID: 4408069828382959504, guid: 65765eda3cbc93e47bfe2ddff118d4af,
         type: 3}
       propertyPath: m_Name
-      value: smartstudent (math)
+      value: Math student
       objectReference: {fileID: 0}
     - target: {fileID: 4408069828382959505, guid: 65765eda3cbc93e47bfe2ddff118d4af,
         type: 3}
@@ -2740,6 +2740,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.76113
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatBarName
+      value: Math
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[0]
+      value: 1 +1 =2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[1]
+      value: 2 x 5 = 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[2]
+      value: 3x + 2y = 82910
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[3]
+      value: 1^2! / 293! = 1029
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[4]
+      value: 29930-8293.10=334
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65765eda3cbc93e47bfe2ddff118d4af, type: 3}
@@ -3920,11 +3955,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: loadMainMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 6203322615101103546, guid: 8a9fcd08d5e90634999aef165c1c0c97,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.07
-      objectReference: {fileID: 0}
     - target: {fileID: 7483749320792274221, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
       propertyPath: m_IsActive
@@ -3934,12 +3964,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3334842090415470299, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6373857898240890800, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7483749320509863376, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7483749320509863376, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+        type: 3}
+      propertyPath: m_Name
+      value: Math
+      objectReference: {fileID: 0}
     - target: {fileID: 7483749321016773782, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
       propertyPath: m_IsActive
@@ -3949,6 +3994,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203322615101103546, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.07
       objectReference: {fileID: 0}
     - target: {fileID: 6203322615101103545, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
@@ -3959,11 +4009,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3334842090415470299, guid: 8a9fcd08d5e90634999aef165c1c0c97,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2452344006545508311, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
@@ -3979,11 +4024,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6373857898240890800, guid: 8a9fcd08d5e90634999aef165c1c0c97,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7483749319623856642, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}

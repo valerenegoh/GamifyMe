@@ -622,7 +622,7 @@ PrefabInstance:
     - target: {fileID: 4408069828382959504, guid: 65765eda3cbc93e47bfe2ddff118d4af,
         type: 3}
       propertyPath: m_Name
-      value: smartstudent (science)
+      value: Chemistry student
       objectReference: {fileID: 0}
     - target: {fileID: 4408069828382959505, guid: 65765eda3cbc93e47bfe2ddff118d4af,
         type: 3}
@@ -760,6 +760,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 01de4a512f6b0a14da28f627ac3a34a6,
         type: 3}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatBarName
+      value: Chemistry
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[0]
+      value: Periodic Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[1]
+      value: Kinetic Molecular Theory
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[2]
+      value: Stoichiometry
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[3]
+      value: Atoms, compounds, ions
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[4]
+      value: Intermolecular forces
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65765eda3cbc93e47bfe2ddff118d4af, type: 3}
 --- !u!4 &180356291 stripped
@@ -1228,6 +1263,7 @@ Transform:
   m_Children:
   - {fileID: 1481585392}
   - {fileID: 1090097018}
+  - {fileID: 836313570}
   m_Father: {fileID: 1123420876}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1321,7 +1357,7 @@ PrefabInstance:
     - target: {fileID: 3200232323499463959, guid: 7d05a5acadeb9e143ac33bd9fdb4dc55,
         type: 3}
       propertyPath: moveSpots.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3200232323499463959, guid: 7d05a5acadeb9e143ac33bd9fdb4dc55,
         type: 3}
@@ -1337,7 +1373,7 @@ PrefabInstance:
         type: 3}
       propertyPath: moveSpots.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 836313570}
     - target: {fileID: 3200232323499463959, guid: 7d05a5acadeb9e143ac33bd9fdb4dc55,
         type: 3}
       propertyPath: moveSpots.Array.data[3]
@@ -3454,6 +3490,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &836313569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 836313570}
+  m_Layer: 0
+  m_Name: spot2 (1)
+  m_TagString: skip
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &836313570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836313569}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.44, y: -1.6, z: -0.08708003}
+  m_LocalScale: {x: 0.20237164, y: 0.8826843, z: 0.43992093}
+  m_Children: []
+  m_Father: {fileID: 216165212}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &858147128
 GameObject:
   m_ObjectHideFlags: 0
@@ -3676,7 +3742,7 @@ PrefabInstance:
     - target: {fileID: 4408069828382959504, guid: 65765eda3cbc93e47bfe2ddff118d4af,
         type: 3}
       propertyPath: m_Name
-      value: smartstudent (math)
+      value: Calculations student
       objectReference: {fileID: 0}
     - target: {fileID: 4408069828382959505, guid: 65765eda3cbc93e47bfe2ddff118d4af,
         type: 3}
@@ -3799,6 +3865,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 944bc09271a58b44c922e835097bc150,
         type: 3}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatBarName
+      value: Calculations
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[0]
+      value: LinReg(ax+b)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[1]
+      value: radian, parametric, sequential
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[2]
+      value: Plot y=(x-1)^2+3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[3]
+      value: Z-Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[4]
+      value: rref([C])
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65765eda3cbc93e47bfe2ddff118d4af, type: 3}
 --- !u!4 &883361950 stripped
@@ -4250,8 +4351,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090097017}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.38000014, y: -1.27, z: -0.08708003}
-  m_LocalScale: {x: 0.18182625, y: 0.7930681, z: 0.39525694}
+  m_LocalPosition: {x: -0.36, y: -1.64, z: -0.08708003}
+  m_LocalScale: {x: 0.2023726, y: 0.8826847, z: 0.4399209}
   m_Children: []
   m_Father: {fileID: 216165212}
   m_RootOrder: 1
@@ -4708,11 +4809,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: loadMainMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 6203322615101103546, guid: 8a9fcd08d5e90634999aef165c1c0c97,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.97
-      objectReference: {fileID: 0}
     - target: {fileID: 5328738447081922676, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -4799,22 +4895,42 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 230fe052811e0484292891f2afd6231e,
         type: 3}
-    - target: {fileID: 2365050542446496931, guid: 8a9fcd08d5e90634999aef165c1c0c97,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8e3a37a3ea328964788675e7abee5a0b,
-        type: 3}
     - target: {fileID: 6548148622352748181, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
       propertyPath: m_Text
       value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483749320792274221, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+        type: 3}
+      propertyPath: m_Name
+      value: Chemistry
       objectReference: {fileID: 0}
     - target: {fileID: 3334842090415470299, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7483749320509863376, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+        type: 3}
+      propertyPath: m_Name
+      value: Calculations
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483749321016773782, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+        type: 3}
+      propertyPath: m_Name
+      value: Geometry
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203322615101103546, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365050542446496931, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8e3a37a3ea328964788675e7abee5a0b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a9fcd08d5e90634999aef165c1c0c97, type: 3}
 --- !u!114 &1219041902 stripped
@@ -5007,7 +5123,7 @@ PrefabInstance:
     - target: {fileID: 4408069828382959504, guid: 65765eda3cbc93e47bfe2ddff118d4af,
         type: 3}
       propertyPath: m_Name
-      value: smartstudent (english)
+      value: Geometry student
       objectReference: {fileID: 0}
     - target: {fileID: 4408069828382959505, guid: 65765eda3cbc93e47bfe2ddff118d4af,
         type: 3}
@@ -5196,6 +5312,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: f63551a987b49e941b8214aa048b3651,
         type: 3}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatBarName
+      value: Geometry
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[0]
+      value: a^2 + b^2 = c^2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[2]
+      value: AB + BC = AC
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[1]
+      value: Pi*r 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[3]
+      value: (1 / 2) * b * h
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658484637210274062, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: cheatingPopupString.Array.data[4]
+      value: s = r*t
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65765eda3cbc93e47bfe2ddff118d4af, type: 3}
 --- !u!4 &1311432382 stripped

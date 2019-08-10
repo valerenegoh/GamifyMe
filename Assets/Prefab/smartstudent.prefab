@@ -300,7 +300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1934185704353341040
 Transform:
   m_ObjectHideFlags: 0
@@ -758,7 +758,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 164c8df086e9cc447af362d5d88c0c0c,
+      objectReference: {fileID: 21300000, guid: c161fdffaf4d9a747b751ff7f9530100,
         type: 3}
     - target: {fileID: 5196050505957544910, guid: 449fef29f1df5f240935d29dded07087,
         type: 3}
@@ -784,6 +784,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196050505957544910, guid: 449fef29f1df5f240935d29dded07087,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.81
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 449fef29f1df5f240935d29dded07087, type: 3}

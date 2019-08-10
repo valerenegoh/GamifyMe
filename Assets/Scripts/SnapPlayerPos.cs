@@ -12,7 +12,7 @@ public class SnapPlayerPos : MonoBehaviour{
 	// private CheatBar CheatBar_English;
 	// private CheatBar CheatBar_Math;
 	// private CheatBar CheatBar_Science;
-	public static bool inSnapPos=true;
+	public static bool inSnapPos;
 	// public bool mathBar=true;
 	// public bool scienceBar=true;
 	// public bool englishBar=true;
@@ -23,12 +23,13 @@ public class SnapPlayerPos : MonoBehaviour{
     void Start(){
     	Player = GameObject.Find("Player");
     	PlayerController=Player.GetComponent<PlayerController>();
-			// ExamBar = GameObject.Find("cheatbar (english)");
-			// CheatBar_English = ExamBar.GetComponent<CheatBar>();
-			// ExamBar = GameObject.Find("cheatbar (math)");
-			// CheatBar_Math = ExamBar.GetComponent<CheatBar>();
-			// ExamBar = GameObject.Find("cheatbar (science)");
-			// CheatBar_Science = ExamBar.GetComponent<CheatBar>();
+		// ExamBar = GameObject.Find("cheatbar (english)");
+		// CheatBar_English = ExamBar.GetComponent<CheatBar>();
+		// ExamBar = GameObject.Find("cheatbar (math)");
+		// CheatBar_Math = ExamBar.GetComponent<CheatBar>();
+		// ExamBar = GameObject.Find("cheatbar (science)");
+		// CheatBar_Science = ExamBar.GetComponent<CheatBar>();
+    	inSnapPos=true;
     }
 
     // Update is called once per frame

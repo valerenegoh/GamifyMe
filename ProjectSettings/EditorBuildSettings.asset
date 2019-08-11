@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Level4.unity
     guid: 42f17d81d0e0b6b49a6520f1b9a3cfcb
   - enabled: 1
-    path: Assets/Scenes/CutScene4.unity
+    path: Assets/Scenes/Outro.unity
     guid: 07489096afabde44986da6c25f4503dc
   - enabled: 0
     path: Assets/Scenes/Level5.unity

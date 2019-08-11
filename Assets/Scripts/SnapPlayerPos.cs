@@ -36,7 +36,7 @@ public class SnapPlayerPos : MonoBehaviour{
     }
 
     void OnTriggerEnter2D(Collider2D other){
-			if(other.tag=="Player"){
+			if(other.tag=="Player"|| other.tag == "Disappear"){
 				StartCoroutine(Freeze(0.5f));
 				other.transform.eulerAngles = new Vector3(0,0,0);
 				other.transform.position = new Vector3(x, y, 0);

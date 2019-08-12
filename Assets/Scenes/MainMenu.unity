@@ -212,7 +212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &12243979
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3160,6 +3160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1511876965}
+  - component: {fileID: 1511876966}
   m_Layer: 5
   m_Name: Login
   m_TagString: start
@@ -3189,6 +3190,18 @@ RectTransform:
   m_AnchoredPosition: {x: -8, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1511876966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511876964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7363bc21091f4e1408c4791873b570eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1578919947
 GameObject:
   m_ObjectHideFlags: 0
@@ -3759,6 +3772,29 @@ MonoBehaviour:
   locklevel4: {fileID: 54271583}
   loginPage: {fileID: 1511876964}
   levelSelectionPage: {fileID: 271293627}
+  nameText: {fileID: 247988859}
+  player:
+    name: 
+    lvl1score: 0
+    lvl2score: 0
+    lvl3score: 0
+    lvl4score: 0
+    latestLvl: 0
+  highScoreLvl1: {fileID: 2072510722}
+  highScoreLvl2: {fileID: 940327959}
+  highScoreLvl3: {fileID: 791252232}
+  highScoreLvl4: {fileID: 1068775503}
+  players:
+  - Kenny
+  - Valerene
+  - Andre
+  - Wei An
+  - Natalie
+  - Nat
+  - lol
+  - Wei An
+  - Wei An
+  - Wei An
 --- !u!4 &2101244819
 Transform:
   m_ObjectHideFlags: 0

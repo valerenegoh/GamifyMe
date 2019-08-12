@@ -2254,12 +2254,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.8
       objectReference: {fileID: 0}
-    - target: {fileID: 9162904786825523404, guid: 7eebda0ff108195459cae23806765e6a,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8a9b821e332b57d48ada35b6ced01efb,
-        type: 3}
     - target: {fileID: 9162904785996881963, guid: 7eebda0ff108195459cae23806765e6a,
         type: 3}
       propertyPath: m_Sprite
@@ -2271,6 +2265,12 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 2.84
       objectReference: {fileID: 0}
+    - target: {fileID: 9162904786825523404, guid: 7eebda0ff108195459cae23806765e6a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8a9b821e332b57d48ada35b6ced01efb,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7eebda0ff108195459cae23806765e6a, type: 3}
 --- !u!4 &444101343 stripped
@@ -2819,6 +2819,15 @@ MonoBehaviour:
   levelPassed: 0
   optimalTimeForThirdStar: 30
   optimalBarForSecondStar: 0.5
+  playerItem:
+    name: 
+    lvl1score: 0
+    lvl2score: 0
+    lvl3score: 0
+    lvl4score: 0
+    latestLvl: 0
+  players: []
+  highScorePlayer: {fileID: 1219041905}
 --- !u!4 &664925237
 Transform:
   m_ObjectHideFlags: 0
@@ -4888,15 +4897,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-    - target: {fileID: 7483749320792274221, guid: 8a9fcd08d5e90634999aef165c1c0c97,
-        type: 3}
-      propertyPath: m_Name
-      value: Chemistry
-      objectReference: {fileID: 0}
     - target: {fileID: 7483749320509863376, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
       propertyPath: m_Name
       value: Calculations
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483749320792274221, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+        type: 3}
+      propertyPath: m_Name
+      value: Chemistry
       objectReference: {fileID: 0}
     - target: {fileID: 6203322615615945566, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
@@ -5023,16 +5032,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Geometry
       objectReference: {fileID: 0}
-    - target: {fileID: 6203322615101103546, guid: 8a9fcd08d5e90634999aef165c1c0c97,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 6203322614385136038, guid: 8a9fcd08d5e90634999aef165c1c0c97,
-        type: 3}
-      propertyPath: countDownStartValue
-      value: 120
-      objectReference: {fileID: 0}
     - target: {fileID: 5328738447081922676, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -5119,22 +5118,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 230fe052811e0484292891f2afd6231e,
         type: 3}
-    - target: {fileID: 2365050542446496931, guid: 8a9fcd08d5e90634999aef165c1c0c97,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8e3a37a3ea328964788675e7abee5a0b,
-        type: 3}
     - target: {fileID: 6548148622352748181, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
       propertyPath: m_Text
       value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203322615101103546, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203322614385136038, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+        type: 3}
+      propertyPath: countDownStartValue
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 7483749320792274220, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
       propertyPath: forgetting
       value: 0.0005
       objectReference: {fileID: 0}
+    - target: {fileID: 2365050542446496931, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8e3a37a3ea328964788675e7abee5a0b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a9fcd08d5e90634999aef165c1c0c97, type: 3}
 --- !u!114 &1219041902 stripped
@@ -5171,6 +5180,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1219041905 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5178781929557236915, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+    type: 3}
+  m_PrefabInstance: {fileID: 1219041901}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1224713645 stripped

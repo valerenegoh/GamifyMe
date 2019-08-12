@@ -3205,6 +3205,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 905703051}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &905703054 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5178781929557236915, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+    type: 3}
+  m_PrefabInstance: {fileID: 905703051}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &922914433
 GameObject:
   m_ObjectHideFlags: 0
@@ -5521,6 +5533,15 @@ MonoBehaviour:
   levelPassed: 0
   optimalTimeForThirdStar: 30
   optimalBarForSecondStar: 0.5
+  playerItem:
+    name: 
+    lvl1score: 0
+    lvl2score: 0
+    lvl3score: 0
+    lvl4score: 0
+    latestLvl: 0
+  players: []
+  highScorePlayer: {fileID: 905703054}
 --- !u!4 &1578786916
 Transform:
   m_ObjectHideFlags: 0

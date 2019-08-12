@@ -353,9 +353,6 @@
  <Reference Include="nunit.framework">
  <HintPath>D:/Unity/2019.1.5f1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Users/ASUS/Documents/GitHub/GamifyMe/Library/PackageCache/com.unity.ads@2.0.8/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="Unity.Analytics.Editor">
  <HintPath>C:/Users/ASUS/Documents/GitHub/GamifyMe/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
  </Reference>

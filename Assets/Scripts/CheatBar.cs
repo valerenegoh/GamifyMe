@@ -13,6 +13,7 @@ public class CheatBar : MonoBehaviour
 	private bool flashBool=false;
     AudioSource sound;
     private bool triggerSoundBool=false;
+    public float forgetting=0.001f;
     // Start is called before the first frame update
     void Start()
 	{
@@ -51,7 +52,7 @@ public class CheatBar : MonoBehaviour
             triggerSoundBool = false;
         }
         if (size>0.01f && size>size_lock){
-			size=size-0.001f;
+			size=size-forgetting;
 			if(!flashBool){
 				StartCoroutine(flashingCheatBar());
 			}

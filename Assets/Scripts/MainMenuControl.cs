@@ -10,9 +10,14 @@ public class MainMenuControl : MonoBehaviour{
     public Image level1, level2, level3, level4;
     public Image locklevel1, locklevel2, locklevel3, locklevel4;
     int levelPassed;
+    public GameObject loginPage;
+    public GameObject levelSelectionPage;
+    private bool loginCheck = false;
 
     // Start is called before the first frame update
     void Start(){
+        loginPage.SetActive(false);
+        levelSelectionPage.SetActive(false);
         levelPassed = PlayerPrefs.GetInt("LevelPassed");
         level02Button.interactable = false;
         level03Button.interactable = false;
@@ -67,12 +72,20 @@ public class MainMenuControl : MonoBehaviour{
         }
     }
 
+    void Update(){
+      if(loginCheck){
+        levelSelectionPage.SetActive(true);
+        loginPage.SetActive(false);
+      } else{
+        loginPage.SetActive(true);
+      }
+    }
+
     public void levelToLoad (int level){
         SceneManager.LoadScene(level);
     }
 
     public void resetPlayerPrefs(){
-
         level02Button.interactable = false;
         level03Button.interactable = false;
         level04Button.interactable = false;
@@ -87,5 +100,9 @@ public class MainMenuControl : MonoBehaviour{
         locklevel3.enabled=true;
         locklevel4.enabled=true;
         PlayerPrefs.DeleteAll();
+    }
+
+    public void login(){
+      loginCheck = true;
     }
 }

@@ -27,6 +27,7 @@ public class LevelControl : MonoBehaviour
     public int optimalTimeForThirdStar = 30;
     public float optimalBarForSecondStar = 0.5f;
 
+
     void Start()
     {
         if(instance==null)
@@ -196,5 +197,9 @@ public class LevelControl : MonoBehaviour
 
     public bool getGameStatus(){
         return gameHasEnded;
+    }
+
+    public void login(){
+
     }
 }

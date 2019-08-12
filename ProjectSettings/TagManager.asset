@@ -11,6 +11,7 @@ TagManager:
   - Invigilator
   - MainCanvas
   - Disappear
+  - start
   layers:
   - Default
   - TransparentFX

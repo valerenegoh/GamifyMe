@@ -20,13 +20,14 @@ public class LevelControl : MonoBehaviour
     public List<GameObject> CheatBars;
     private GameObject[] invigilators;
     private Text gameOverText, youWinText, timerTextUI, scoreTextUI, scoreHighestTextUI, playerTitleText;
+    private Image youWinImage, gameOverImage;
     private double score;
     private int scoreInt;
     public int sceneIndex, levelPassed;
 
     public int optimalTimeForThirdStar = 30;
     public float optimalBarForSecondStar = 0.5f;
-    
+
     private GameObject player;
     public Player user;
     public Text highScorePlayer;
@@ -54,8 +55,10 @@ public class LevelControl : MonoBehaviour
         winSound.Stop();
 
         //ui components
-        gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
-        youWinText = GameObject.Find("YouWinText").GetComponent<Text>();
+        gameOverImage = GameObject.Find("GameOverImage").GetComponent<Image>();
+        youWinImage = GameObject.Find("YouWinImage").GetComponent<Image>();
+        // gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
+        // youWinText = GameObject.Find("YouWinText").GetComponent<Text>();
         timerTextUI = GameObject.Find("TimerText").GetComponent<Text>();
         playerTitleText = GameObject.Find("Title").GetComponent<Text>();
         scoreTextUI = GameObject.Find("Score").GetComponent<Text>();
@@ -103,7 +106,7 @@ public class LevelControl : MonoBehaviour
         //     Invoke("LoadMainMenu", 1f);
         // }
         // else{
-        
+
         winSound.Play();
         if(levelPassed < sceneIndex){
             PlayerPrefs.SetInt("LevelPassed", sceneIndex);
@@ -136,14 +139,14 @@ public class LevelControl : MonoBehaviour
 
         //highest score
         if(score>PlayerPrefs.GetInt("HighestScore" + sceneIndex)){
-          youWinText.text = "NEW RECORD!";
+          // youWinText.text = "NEW RECORD!";
           Debug.Log(sceneIndex/2 + ", " + scoreInt);
           RestClient.Get<Player>("https://gamifyme-489ce.firebaseio.com/PlayerList/" + playerName + ".json").Then(response =>{
             user = response;
             user.setLvlscore(sceneIndex/2, scoreInt);
             RestClient.Put("https://gamifyme-489ce.firebaseio.com/PlayerList/" + playerName + ".json", user);
           });
-          
+
         }
         scoreHighestTextUI.text = "Highest Score: " + PlayerPrefs.GetInt("HighestScore"+sceneIndex);
 
@@ -167,7 +170,8 @@ public class LevelControl : MonoBehaviour
 				}
 
         endGamePanel.gameObject.SetActive(true);
-        gameOverText.gameObject.SetActive(false);
+        gameOverImage.enabled = false;
+        // gameOverText.gameObject.SetActive(false);
         restartButton.gameObject.SetActive(false);
         gameHasEnded = true;
         player.GetComponent<PlayerController>().FreezeMovement();
@@ -185,7 +189,8 @@ public class LevelControl : MonoBehaviour
         scoreTextUI.text = "Score: 0";
         scoreHighestTextUI.text = "Highest Score: " + PlayerPrefs.GetInt("HighestScore"+sceneIndex);
         endGamePanel.gameObject.SetActive(true);
-        youWinText.gameObject.SetActive(false);
+        youWinImage.enabled = false;
+        // youWinText.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
         gameHasEnded = true;
         player.GetComponent<PlayerController>().FreezeMovement();
@@ -256,4 +261,6 @@ public class LevelControl : MonoBehaviour
     public bool getGameStatus(){
         return gameHasEnded;
     }
+
+
 }

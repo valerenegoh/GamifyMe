@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour{
 	private Rigidbody2D player;
@@ -16,20 +17,20 @@ public class PlayerController : MonoBehaviour{
     public bool mistIsCooling;
     public bool mistIsDone = true;
     public Image mistCooldownImg;
-    private AudioSource mistAudio; 
+    private AudioSource mistAudio;
 
     public bool isDashing;
     public float dashCoolDownValue = 7;
     public bool dashIsCooling;
     public bool dashIsDone = true;
     public Image dashCooldownImg;
-    private AudioSource dashAudio; 
+    private AudioSource dashAudio;
 
     public float fcopyCoolDownValue = 5;
     public bool fcopyIsCooling;
     public bool fcopyIsDone = true;
     public Image fcopyCooldownImg;
-    private AudioSource fcopyAudio; 
+    private AudioSource fcopyAudio;
 
     public bool unlockMist = false;
     public bool unlockDash = false;
@@ -56,7 +57,7 @@ public class PlayerController : MonoBehaviour{
        if(!movable){
             anim.SetBool("isDashing", false);
             anim.SetBool("isWalking", false);
-        }   
+        }
         if(movable){
             if(!isDashing){
                 anim.SetBool("isDashing", false);
@@ -93,7 +94,7 @@ public class PlayerController : MonoBehaviour{
         if(Input.GetKeyDown(KeyCode.Q) && unlockMist){
             if(!mistIsCooling && dashIsDone && fcopyIsDone){
                 StartCoroutine(Mistify());
-            }  
+            }
         }
         if(mistIsCooling){
             mistCooldownImg.fillAmount += 1/mistCoolDownValue * Time.deltaTime;
@@ -107,7 +108,7 @@ public class PlayerController : MonoBehaviour{
         if(Input.GetKeyDown(KeyCode.W) && unlockDash){
             if(!dashIsCooling && mistIsDone && fcopyIsDone){
                 StartCoroutine(Dash());
-            }  
+            }
         }
         if(dashIsCooling){
             dashCooldownImg.fillAmount += 1/dashCoolDownValue * Time.deltaTime;
@@ -121,7 +122,7 @@ public class PlayerController : MonoBehaviour{
         if(Input.GetKeyDown(KeyCode.E) && unlockFCopy){
             if(!fcopyIsCooling && mistIsDone && dashIsDone){
                 StartCoroutine(FastCopy());
-            }  
+            }
         }
         if(fcopyIsCooling){
             fcopyCooldownImg.fillAmount += 1/fcopyCoolDownValue * Time.deltaTime;

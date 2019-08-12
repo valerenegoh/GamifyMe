@@ -9,6 +9,7 @@ public class LevelControl : MonoBehaviour
     public static LevelControl instance = null;
     public bool gameHasEnded = false;
     AudioSource loseSound;
+    AudioSource winSound;
     // public AudioClip winSound;
     private GameObject endGamePanel, restartButton, nextButton, star1, star2, star3;
     private GameObject player;
@@ -36,8 +37,11 @@ public class LevelControl : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        loseSound = gameObject.GetComponent<AudioSource>();
+        AudioSource[] audios = GetComponents<AudioSource>();
+        loseSound = audios[0];
+        winSound = audios[1];
         loseSound.Stop();
+        winSound.Stop();
 
         //ui components
         gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
@@ -78,12 +82,18 @@ public class LevelControl : MonoBehaviour
         // CheatBar_Science = ExamBar.GetComponent<CheatBar>();
     }
 
+    void Update(){
+      if (Input.GetKeyDown("r")){
+        youLose();
+      }
+    }
+
     public void youWin(){
         // if(sceneIndex==4){
         //     Invoke("LoadMainMenu", 1f);
         // }
         // else{
-            // winSound.Play();
+            winSound.Play();
             if(levelPassed < sceneIndex){
                 PlayerPrefs.SetInt("LevelPassed", sceneIndex);
             }

@@ -10,6 +10,7 @@ public class LevelControl : MonoBehaviour
     public bool gameHasEnded = false;
     AudioSource loseSound;
     AudioSource winSound;
+    private Animator anim;
 
     private GameObject endGamePanel, restartButton, nextButton, star1, star2, star3;
 
@@ -49,9 +50,12 @@ public class LevelControl : MonoBehaviour
         // youWinText = GameObject.Find("YouWinText").GetComponent<Text>();
         timerTextUI = GameObject.Find("TimerText").GetComponent<Text>();
         playerTitleText = GameObject.Find("Title").GetComponent<Text>();
+        StartBlinking();
         scoreTextUI = GameObject.Find("Score").GetComponent<Text>();
         scoreHighestTextUI = GameObject.Find("HighestScore").GetComponent<Text>();
         endGamePanel = GameObject.Find("EndGamePanel");
+        anim = endGamePanel.GetComponent<Animator>();
+        // anim.SetBool("gameover", false);
         restartButton = GameObject.Find("RestartButton");
         nextButton = GameObject.Find("NextButton");
         star1 = GameObject.Find("Star1");
@@ -77,12 +81,14 @@ public class LevelControl : MonoBehaviour
 
     void Update(){
       if (Input.GetKeyDown("r")){
+        // anim.SetBool("gameover", true);
         youLose();
       }
+      // Debug.Log(anim.GetBool("gameover"));
     }
 
     public void youWin(){
-
+        // anim.SetBool("gameover", true);
         winSound.Play();
         if(levelPassed < sceneIndex){
             PlayerPrefs.SetInt("LevelPassed", sceneIndex);
@@ -152,6 +158,7 @@ public class LevelControl : MonoBehaviour
     }
 
     public void youLose(){
+        // anim.SetBool("gameover", true);
         //score
         loseSound.Play();
         scoreTextUI.text = "Score: 0";
@@ -189,5 +196,30 @@ public class LevelControl : MonoBehaviour
         return gameHasEnded;
     }
 
+    IEnumerator Blink(){
+      while(true){
+        switch(playerTitleText.color.a.ToString()){
+          case "0":
+            playerTitleText.color = new Color(playerTitleText.color.r, playerTitleText.color.g, playerTitleText.color.b, 1);
+            //Play sound
+            yield return new WaitForSeconds(0.5f);
+            break;
+          case "1":
+            playerTitleText.color = new Color(playerTitleText.color.r, playerTitleText.color.g, playerTitleText.color.b, 0);
+            //Play sound
+            yield return new WaitForSeconds(0.5f);
+            break;
+        }
+      }
+    }
+
+    void StartBlinking(){
+      StopCoroutine("Blink");
+      StartCoroutine("Blink");
+    }
+
+    void StopBlinking(){
+      StopCoroutine("Blink");
+    }
 
 }

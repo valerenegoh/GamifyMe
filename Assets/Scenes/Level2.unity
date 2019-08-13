@@ -2983,15 +2983,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-    - target: {fileID: 7483749320792274221, guid: 8a9fcd08d5e90634999aef165c1c0c97,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7483749320509863376, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
       propertyPath: m_Name
       value: Biology
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483749320792274221, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6203322615615945566, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
@@ -3101,7 +3101,7 @@ PrefabInstance:
     - target: {fileID: 4088243631141595134, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4323906813607798335, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
@@ -3132,6 +3132,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Physics
+      objectReference: {fileID: 0}
+    - target: {fileID: 6373857898240890800, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483749321016773780, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.679
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483749320509863378, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.802769
       objectReference: {fileID: 0}
     - target: {fileID: 5328738447081922676, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
@@ -3213,21 +3228,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Level 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7483749321016773780, guid: 8a9fcd08d5e90634999aef165c1c0c97,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.679
-      objectReference: {fileID: 0}
-    - target: {fileID: 7483749320509863378, guid: 8a9fcd08d5e90634999aef165c1c0c97,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.802769
-      objectReference: {fileID: 0}
-    - target: {fileID: 6373857898240890800, guid: 8a9fcd08d5e90634999aef165c1c0c97,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8128433958249764780, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}

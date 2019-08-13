@@ -7,12 +7,19 @@ public class snitchAlert : MonoBehaviour
     private Transform exclaimationMark;
     private Transform exclaimationMark_GameObject;
     private SpriteRenderer exclaimationMark_renderer;
+    private GameObject cheatingText;
+    private GameObject cheatingTextBubble;
     private float size = 0f;
     private bool snitchRange = false;
+    public bool level3 = true;
 
     // Start is called before the first frame update
     void Start()
     {
+        cheatingText = transform.Find("CheatingText").gameObject;
+        cheatingTextBubble = transform.Find("SpeechBubble").gameObject;
+        cheatingText.SetActive(false);
+        cheatingTextBubble.SetActive(false);
         exclaimationMark_GameObject = transform.Find("ExclaimationMark");
         exclaimationMark = transform.Find("ExclaimationMark").Find("SpriteRendererOuter").Find("SpriteFillColor");
         exclaimationMark_renderer = exclaimationMark.GetComponentInChildren<SpriteRenderer>();
@@ -42,10 +49,18 @@ public class snitchAlert : MonoBehaviour
         if (size < 1f)
         {
             exclaimationMark.localScale = new Vector3(1f, size);
+            cheatingText.SetActive(false);
+            cheatingTextBubble.SetActive(false);
         }
         else
         {
             exclaimationMark.localScale = new Vector3(1f, 1f);
+            cheatingText.SetActive(true);
+            cheatingTextBubble.SetActive(true);
+            if (!level3)
+            {
+                LevelControl.instance.youLose();
+            }
         }
 
     }

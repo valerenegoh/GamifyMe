@@ -5068,6 +5068,11 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2710703095884250083, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65765eda3cbc93e47bfe2ddff118d4af, type: 3}
 --- !u!4 &1107096169 stripped
@@ -5431,15 +5436,6 @@ MonoBehaviour:
   levelPassed: 0
   optimalTimeForThirdStar: 30
   optimalBarForSecondStar: 0.5
-  playerItem:
-    name: 
-    lvl1score: 0
-    lvl2score: 0
-    lvl3score: 0
-    lvl4score: 0
-    latestLvl: 0
-  players: []
-  highScorePlayer: {fileID: 1293712720}
 --- !u!4 &1254997846
 Transform:
   m_ObjectHideFlags: 0
@@ -5988,15 +5984,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-    - target: {fileID: 7483749320509863376, guid: 8a9fcd08d5e90634999aef165c1c0c97,
-        type: 3}
-      propertyPath: m_Name
-      value: Literature
-      objectReference: {fileID: 0}
     - target: {fileID: 7483749320792274221, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
       propertyPath: m_Name
       value: Vocabulary
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483749320509863376, guid: 8a9fcd08d5e90634999aef165c1c0c97,
+        type: 3}
+      propertyPath: m_Name
+      value: Literature
       objectReference: {fileID: 0}
     - target: {fileID: 6203322615615945566, guid: 8a9fcd08d5e90634999aef165c1c0c97,
         type: 3}
@@ -6297,18 +6293,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1293712720 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5178781929557236915, guid: 8a9fcd08d5e90634999aef165c1c0c97,
-    type: 3}
-  m_PrefabInstance: {fileID: 1293712716}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1293712722 stripped
@@ -6755,6 +6739,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 7708f875b408a6145a80d8eb4b178af5,
         type: 3}
+    - target: {fileID: 4490577109441102404, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: level3
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65765eda3cbc93e47bfe2ddff118d4af, type: 3}
 --- !u!4 &1387863054 stripped
@@ -7116,6 +7105,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 2fd86e8664affd4488ecddd8973f6b63,
         type: 3}
+    - target: {fileID: 2710703095884250083, guid: 65765eda3cbc93e47bfe2ddff118d4af,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65765eda3cbc93e47bfe2ddff118d4af, type: 3}
 --- !u!4 &1437779725 stripped

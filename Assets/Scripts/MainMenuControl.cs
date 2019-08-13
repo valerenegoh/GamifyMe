@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Proyecto26;     // for Firebase
 
 public class MainMenuControl : MonoBehaviour{
 
@@ -15,19 +14,10 @@ public class MainMenuControl : MonoBehaviour{
     public GameObject levelSelectionPage;
     private bool loginCheck = false;
 
-    public InputField nameText;
-    public Player player;
-
-    public Text highScoreLvl1;
-    public Text highScoreLvl2;
-    public Text highScoreLvl3;
-    public Text highScoreLvl4;
-
-    public List<string> players;
+    public InputField inputName;
 
     // Start is called before the first frame update
     void Start(){
-        StartCoroutine(ShowStatistics());
         loginPage.SetActive(false);
         levelSelectionPage.SetActive(false);
         levelPassed = PlayerPrefs.GetInt("LevelPassed");
@@ -114,49 +104,12 @@ public class MainMenuControl : MonoBehaviour{
         PlayerPrefs.DeleteAll();
     }
 
-    public void login(){
-        loginCheck = true;
-        player = new Player();
-        player.setName(nameText.text);
-        PlayerPrefs.SetString("Name", nameText.text);
-        RestClient.Put("https://gamifyme-489ce.firebaseio.com/" + nameText.text + ".json", player);
+    public void highScores(){
+        SceneManager.LoadScene(10);
     }
 
-    public IEnumerator ShowStatistics(){
-        int lvl1highest = 0;
-        int lvl2highest = 0;
-        int lvl3highest = 0;
-        int lvl4highest = 0;
-        string lvl1name = "";
-        string lvl2name = "";
-        string lvl3name = "";
-        string lvl4name = "";
-
-        foreach(string item in players){
-            RestClient.Get<Player>("https://gamifyme-489ce.firebaseio.com/" + item + ".json").Then(response =>{
-                player = response;
-                if(player.lvl1score > lvl1highest){
-                    lvl1highest = player.lvl1score;
-                    lvl1name = item;
-                }
-                if(player.lvl2score > lvl2highest){
-                    lvl2highest = player.lvl2score;
-                    lvl2name = item;
-                }
-                if(player.lvl1score > lvl3highest){
-                    lvl3highest = player.lvl3score;
-                    lvl3name = item;
-                }
-                if(player.lvl1score > lvl4highest){
-                    lvl4highest = player.lvl4score;
-                    lvl4name = item;
-                }
-            });
-            yield return new WaitForSeconds(0.5f);  //wait awhile before updating statistics
-            highScoreLvl1.text = string.Format("{0} ({1} points)", lvl1name, lvl1highest.ToString());
-            highScoreLvl2.text = string.Format("{0} ({1} points)", lvl2name, lvl2highest.ToString());
-            highScoreLvl3.text = string.Format("{0} ({1} points)", lvl3name, lvl3highest.ToString());
-            highScoreLvl4.text = string.Format("{0} ({1} points)", lvl4name, lvl4highest.ToString());
-        }
+    public void login(){
+        loginCheck = true;
+        PlayerPrefs.SetString("Name", inputName.text);
     }
 }

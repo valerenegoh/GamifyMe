@@ -35,7 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Outro.unity
     guid: 07489096afabde44986da6c25f4503dc
-  - enabled: 0
-    path: Assets/Scenes/Level5.unity
-    guid: d60c80c67fdda3d4c8b6e223f6eefa6e
+  - enabled: 1
+    path: Assets/Scenes/HighScores.unity
+    guid: 06eec258cbc17d64fbf919c6dd79cf10
   m_configObjects: {}

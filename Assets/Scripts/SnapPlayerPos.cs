@@ -7,6 +7,9 @@ public class SnapPlayerPos : MonoBehaviour{
 	public float x;  // player's original x position
 	public float y;  // player's original y position
 	private GameObject Player;
+	private AudioSource barAudio;
+	// private bool firstSeating = true;
+	private Dictionary<int, float> bars;
 	// private GameObject ExamBar;
 	private PlayerController PlayerController;
 	// private CheatBar CheatBar_English;
@@ -23,6 +26,12 @@ public class SnapPlayerPos : MonoBehaviour{
     void Start(){
     	Player = GameObject.Find("Player");
     	PlayerController=Player.GetComponent<PlayerController>();
+			barAudio = GetComponent<AudioSource>();
+			barAudio.Stop();
+			bars = new Dictionary<int, float>();
+			bars.Add(0, 0.0f);
+			bars.Add(1, 0.0f);
+			bars.Add(2, 0.0f);
 			// ExamBar = GameObject.Find("cheatbar (english)");
 			// CheatBar_English = ExamBar.GetComponent<CheatBar>();
 			// ExamBar = GameObject.Find("cheatbar (math)");
@@ -37,88 +46,35 @@ public class SnapPlayerPos : MonoBehaviour{
 
     void OnTriggerEnter2D(Collider2D other){
 			if(other.tag=="Player"|| other.tag == "Disappear"){
+
 				StartCoroutine(Freeze(0.5f));
 				other.transform.eulerAngles = new Vector3(0,0,0);
 				other.transform.position = new Vector3(x, y, 0);
 
 				// Locks the cheatbar
 				var allMeetMinimumScore = true;
+				// if(!firstSeating){
+				// 	barAudio.Play();
+				// }
+				var counter = 0;
 				foreach(GameObject CheatBar in CheatBars)
 				{
 					CheatBar CheatBar_Item = CheatBar.GetComponent<CheatBar>();
-					CheatBar_Item.cheatBarLock(); 
+					CheatBar_Item.cheatBarLock();
+					if(bars[counter]<CheatBar_Item.size){
+						//update temp bar value
+						barAudio.Play();
+						bars[counter] = CheatBar_Item.size;
+					}
 					if(CheatBar_Item.size < 0.3f){
 						allMeetMinimumScore = false;
 					}
+					counter+=1;
 				}
-				// CheatBar_English.cheatBarLock();
-				// CheatBar_Science.cheatBarLock();
-				// CheatBar_Math.cheatBarLock();
-
-				// Immune to TeacherSight
 				inSnapPos=true;
-
-				// If above benchmark wins
-				// CheatBarsScores.Clear();
-				// foreach(GameObject CheatBar in CheatBars)
-				// {
-				// 	CheatBar CheatBar_Item = CheatBar.GetComponent<CheatBar>();
-				// 	CheatBarsScores.Add(CheatBar_Item.size);
-				// }
-				
-				// var allMeetMinimumScore = false;
-				// foreach(float score in CheatBarsScores)
-				// {
-				// 	if(score >= 0.3f){
-				// 		allMeetMinimumScore = true;
-				// 	}
-				// }
-
 				if(allMeetMinimumScore){
 					LevelControl.instance.youWin();
 				}
-				// // 1qn math
-				// if(mathBar==true && scienceBar==false && englishBar==false){
-				// 	if(CheatBar_Math.size >= 0.3f){
-				// 		LevelControl.instance.youWin();
-				// 	}
-				// }
-				// //1qn science
-				// if(mathBar==false && scienceBar==true && englishBar==false){
-				// 	if(CheatBar_Science.size>= 0.3f){
-				// 		LevelControl.instance.youWin();
-				// 	}
-				// }
-				// //1qn english
-				// if(mathBar==false && scienceBar==false && englishBar==true){
-				// 	if(CheatBar_English.size >= 0.3f && CheatBar_Math.size >= 0.3f && CheatBar_Science.size>= 0.3f){
-				// 		LevelControl.instance.youWin();
-				// 	}
-				// }
-				// //2qn math, science
-				// if(mathBar==true && scienceBar==true && englishBar==false){
-				// 	if(CheatBar_English.size >= 0.3f && CheatBar_Math.size >= 0.3f && CheatBar_Science.size>= 0.3f){
-				// 		LevelControl.instance.youWin();
-				// 	}
-				// }
-				// //2qn math, english
-				// if(mathBar==true && scienceBar==false && englishBar==true){
-				// 	if(CheatBar_English.size >= 0.3f && CheatBar_Math.size >= 0.3f && CheatBar_Science.size>= 0.3f){
-				// 		LevelControl.instance.youWin();
-				// 	}
-				// }
-				// //2qn science, english
-				// if(mathBar==false && scienceBar==true && englishBar==true){
-				// 	if(CheatBar_English.size >= 0.3f && CheatBar_Math.size >= 0.3f && CheatBar_Science.size>= 0.3f){
-				// 		LevelControl.instance.youWin();
-				// 	}
-				// }
-				// //3qns science, math, english
-				// if(mathBar==true && scienceBar==true && englishBar==false){
-				// 	if(CheatBar_English.size >= 0.3f && CheatBar_Math.size >= 0.3f && CheatBar_Science.size>= 0.3f){
-				// 		LevelControl.instance.youWin();
-				// 	}
-				// }
 			}
 		}
 	void OnTriggerExit2D(Collider2D other){

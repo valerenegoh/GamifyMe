@@ -30,13 +30,13 @@ public class MainMenuControl : MonoBehaviour{
 		locklevel4.enabled=true;
 
 		switch(levelPassed){
-			case 2:
+			case 3:
 				Debug.Log("level2Passed: " + levelPassed);
 				level02Button.interactable = true;
 				level2.enabled=true;
 				locklevel2.enabled=false;
 				break;
-			case 4:
+			case 5:
 				Debug.Log("level4Passed: " + levelPassed);
 				level02Button.interactable = true;
 				level03Button.interactable = true;
@@ -45,7 +45,7 @@ public class MainMenuControl : MonoBehaviour{
 				locklevel2.enabled=false;
 				locklevel3.enabled=false;
 				break;
-			case 6:
+			case 7:
 				Debug.Log("level6Passed: " + levelPassed);
 				level02Button.interactable = true;
 				level03Button.interactable = true;
@@ -57,7 +57,7 @@ public class MainMenuControl : MonoBehaviour{
 				locklevel3.enabled=false;
 				locklevel4.enabled=false;
 				break;
-			case 8:
+			case 9:
 				Debug.Log("level8Passed: " + levelPassed);
 				level02Button.interactable = true;
 				level03Button.interactable = true;

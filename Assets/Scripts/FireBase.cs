@@ -38,7 +38,7 @@ public class FireBase : MonoBehaviour
 
         FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://gamifyme-489ce.firebaseio.com/");
         reference = FirebaseDatabase.DefaultInstance.RootReference.Child(playerName);
-        
+
         Player player = new Player(playerName, lvl1, lvl2, lvl3, lvl4, lvlPassed);
         string json = JsonUtility.ToJson(player);
         reference.SetRawJsonValueAsync(json);
@@ -151,6 +151,6 @@ public class FireBase : MonoBehaviour
 
     public void back(){
         Debug.Log("pressed");
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

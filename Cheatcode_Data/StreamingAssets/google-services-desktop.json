@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "488664498192",
+    "firebase_url": "https://gamifyme-489ce.firebaseio.com",
+    "project_id": "gamifyme-489ce",
+    "storage_bucket": "gamifyme-489ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488664498192:android:f667c5d4fd55dae8",
+        "android_client_info": {
+          "package_name": "com.GamifyMe.Cheatcode"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "488664498192-o322kbe6m7iducgo6320l6cua3j5taeo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR49OLcpjmMFR1gmrQNafeqBn-OaWJOG0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "488664498192-o322kbe6m7iducgo6320l6cua3j5taeo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

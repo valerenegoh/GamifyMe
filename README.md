@@ -9,6 +9,7 @@ Group members:
 
 Please see final build game under `Build` folder.
 Playable for PC, Mac & Linux Standalone.
+High scores reveal up to top 10 cheaters per level.
 Built using Unity.
 
 Please see report under `Report` folder.

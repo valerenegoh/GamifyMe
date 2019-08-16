@@ -21,6 +21,7 @@ public class SnapPlayerPos : MonoBehaviour{
 	// public bool englishBar=true;
 	public List<GameObject> CheatBars;
 	private List<float> CheatBarsScores;
+	public Sprite sittingImg;
 
     // Start is called before the first frame update
     void Start(){
@@ -46,6 +47,11 @@ public class SnapPlayerPos : MonoBehaviour{
 
     void OnTriggerEnter2D(Collider2D other){
 			if(other.tag=="Player"|| other.tag == "Disappear"){
+				//sit down
+				if (other.transform.childCount > 0){
+					other.transform.GetChild(0).gameObject.SetActive(false);
+					other.GetComponent<SpriteRenderer>().sprite = sittingImg;
+				}
 
 				StartCoroutine(Freeze(0.5f));
 				other.transform.eulerAngles = new Vector3(0,0,0);
@@ -78,6 +84,12 @@ public class SnapPlayerPos : MonoBehaviour{
 			}
 		}
 	void OnTriggerExit2D(Collider2D other){
+		// stand up
+		if (other.transform.childCount > 0){
+			other.GetComponent<SpriteRenderer>().sprite = null;
+			other.transform.GetChild(0).gameObject.SetActive(true);
+		}
+
 		inSnapPos=false;
 	}
 	IEnumerator Freeze(float time){

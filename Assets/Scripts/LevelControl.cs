@@ -46,8 +46,6 @@ public class LevelControl : MonoBehaviour
         //ui components
         gameOverImage = GameObject.Find("GameOverImage").GetComponent<Image>();
         youWinImage = GameObject.Find("YouWinImage").GetComponent<Image>();
-        // gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
-        // youWinText = GameObject.Find("YouWinText").GetComponent<Text>();
         timerTextUI = GameObject.Find("TimerText").GetComponent<Text>();
         playerTitleText = GameObject.Find("Title").GetComponent<Text>();
         StartBlinking();
@@ -55,7 +53,6 @@ public class LevelControl : MonoBehaviour
         scoreHighestTextUI = GameObject.Find("HighestScore").GetComponent<Text>();
         endGamePanel = GameObject.Find("EndGamePanel");
         anim = endGamePanel.GetComponent<Animator>();
-        // anim.SetBool("gameover", false);
         restartButton = GameObject.Find("RestartButton");
         nextButton = GameObject.Find("NextButton");
         star1 = GameObject.Find("Star1");
@@ -81,10 +78,8 @@ public class LevelControl : MonoBehaviour
 
     void Update(){
       if (Input.GetKeyDown("r")){
-        // anim.SetBool("gameover", true);
         youLose();
       }
-      // Debug.Log(anim.GetBool("gameover"));
     }
 
     public void youWin(){
@@ -122,7 +117,7 @@ public class LevelControl : MonoBehaviour
         //highest score
         if(score>PlayerPrefs.GetInt("HighestScore" + sceneIndex)){
             PlayerPrefs.SetInt("HighestScore" + sceneIndex, scoreInt);
-          // youWinText.text = "NEW RECORD!";
+            Debug.Log("Highscore: " + scoreInt);
         }
         scoreHighestTextUI.text = "Highest Score: " + PlayerPrefs.GetInt("HighestScore"+sceneIndex);
 
@@ -147,7 +142,6 @@ public class LevelControl : MonoBehaviour
 
         endGamePanel.gameObject.SetActive(true);
         gameOverImage.enabled = false;
-        // gameOverText.gameObject.SetActive(false);
         restartButton.gameObject.SetActive(false);
         gameHasEnded = true;
         player.GetComponent<PlayerController>().FreezeMovement();
@@ -158,14 +152,12 @@ public class LevelControl : MonoBehaviour
     }
 
     public void youLose(){
-        // anim.SetBool("gameover", true);
         //score
         loseSound.Play();
         scoreTextUI.text = "Score: 0";
         scoreHighestTextUI.text = "Highest Score: " + PlayerPrefs.GetInt("HighestScore"+sceneIndex);
         endGamePanel.gameObject.SetActive(true);
         youWinImage.enabled = false;
-        // youWinText.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
         gameHasEnded = true;
         player.GetComponent<PlayerController>().FreezeMovement();

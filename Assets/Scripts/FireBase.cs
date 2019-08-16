@@ -27,10 +27,10 @@ public class FireBase : MonoBehaviour
     {
     	string playerName = PlayerPrefs.GetString("Name");
         int lvlPassed = PlayerPrefs.GetInt("LevelPassed");
-    	int lvl1 = PlayerPrefs.GetInt("HighestScore2");
-        int lvl2 = PlayerPrefs.GetInt("HighestScore4");
-        int lvl3 = PlayerPrefs.GetInt("HighestScore6");
-        int lvl4 = PlayerPrefs.GetInt("HighestScore8");
+    	int lvl1 = PlayerPrefs.GetInt("HighestScore3");
+        int lvl2 = PlayerPrefs.GetInt("HighestScore5");
+        int lvl3 = PlayerPrefs.GetInt("HighestScore7");
+        int lvl4 = PlayerPrefs.GetInt("HighestScore9");
         playerScoreLvl1.text = lvl1 + " points";
         playerScoreLvl2.text = lvl2 + " points";
         playerScoreLvl3.text = lvl3 + " points";

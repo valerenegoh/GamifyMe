@@ -12,6 +12,7 @@ public class Login : MonoBehaviour{
 	public InputField inputName;
 	private DatabaseReference reference;
 	public bool isNewUser;
+	private bool clicked;
 	private Player player;
 
 	// Start is called before the first frame update
@@ -20,14 +21,20 @@ public class Login : MonoBehaviour{
 	}
 
 	void Update(){
-		if(!isNewUser){
-			LoadMain();
-		} else{
+		if(!isNewUser && clicked){
+			PlayerPrefs.SetInt("LevelPassed", player.latestLvl);
+		    PlayerPrefs.SetInt("HighestScore3", player.lvl1score);
+		    PlayerPrefs.SetInt("HighestScore5", player.lvl2score);
+		    PlayerPrefs.SetInt("HighestScore7", player.lvl3score);
+		    PlayerPrefs.SetInt("HighestScore9", player.lvl4score);
+			SceneManager.LoadScene(1);
+		} else if(isNewUser && clicked){
 			PlayerPrefs.SetInt("LevelPassed", 0);
-			PlayerPrefs.SetInt("HighestScore2", 0);
-			PlayerPrefs.SetInt("HighestScore4", 0);
-			PlayerPrefs.SetInt("HighestScore6", 0);
-			PlayerPrefs.SetInt("HighestScore8", 0);
+			PlayerPrefs.SetInt("HighestScore3", 0);
+			PlayerPrefs.SetInt("HighestScore5", 0);
+			PlayerPrefs.SetInt("HighestScore7", 0);
+			PlayerPrefs.SetInt("HighestScore9", 0);
+			SceneManager.LoadScene(1);
 		}
 	}
 
@@ -46,17 +53,8 @@ public class Login : MonoBehaviour{
                       isNewUser = false;
 					}
 				}
+				clicked = true;
 		  });
 		PlayerPrefs.SetString("Name", inputName.text);
-	}
-
-	public void LoadMain(){
-		PlayerPrefs.SetInt("LevelPassed", player.latestLvl);
-	    PlayerPrefs.SetInt("HighestScore2", player.lvl1score);
-	    PlayerPrefs.SetInt("HighestScore4", player.lvl2score);
-	    PlayerPrefs.SetInt("HighestScore6", player.lvl3score);
-	    PlayerPrefs.SetInt("HighestScore8", player.lvl4score);
-	    Debug.Log("LevelPassed AFTER: " + PlayerPrefs.GetInt("LevelPassed"));
-		SceneManager.LoadScene(1);
 	}
 }

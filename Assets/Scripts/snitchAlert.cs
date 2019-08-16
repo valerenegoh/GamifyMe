@@ -46,13 +46,18 @@ public class snitchAlert : MonoBehaviour
         {
             exclaimationMark_GameObject.gameObject.SetActive(false);
         }
-        if (size < 1f)
+        if (size < 0.8f)
         {
             exclaimationMark.localScale = new Vector3(1f, size);
             cheatingText.SetActive(false);
             cheatingTextBubble.SetActive(false);
         }
-        else
+        else if (size < 1f)
+        {
+            exclaimationMark.localScale = new Vector3(1f, size);
+            cheatingText.SetActive(true);
+            cheatingTextBubble.SetActive(true);
+        }else
         {
             exclaimationMark.localScale = new Vector3(1f, 1f);
             cheatingText.SetActive(true);

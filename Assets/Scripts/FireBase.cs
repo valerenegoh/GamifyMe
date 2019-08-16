@@ -50,16 +50,7 @@ public class FireBase : MonoBehaviour
     	List<Player> lvl2scores = new List<Player>();
     	List<Player> lvl3scores = new List<Player>();
     	List<Player> lvl4scores = new List<Player>();
-        int lvl1highest = 0;
-        int lvl2highest = 0;
-        int lvl3highest = 0;
-        int lvl4highest = 0;
-        string lvl1name = "";
-        string lvl2name = "";
-        string lvl3name = "";
-        string lvl4name = "";
 
-        yield return new WaitForSeconds(0.5f);
         FirebaseDatabase.DefaultInstance.GetReferenceFromUrl("https://gamifyme-489ce.firebaseio.com/")
             .OrderByChild("lvl1score").LimitToLast(10).GetValueAsync().ContinueWith(task => {
                 if (task.IsFaulted){
@@ -120,7 +111,7 @@ public class FireBase : MonoBehaviour
                     lvl4scores.Reverse();
                 }
           });
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
         string lvl1text = "";
         foreach(Player item in lvl1scores){
         	lvl1text += item.name + " (" + item.lvl1score + " points)\n";

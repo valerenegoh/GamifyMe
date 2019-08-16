@@ -27,6 +27,11 @@ public class Login : MonoBehaviour{
 		    PlayerPrefs.SetInt("HighestScore5", player.lvl2score);
 		    PlayerPrefs.SetInt("HighestScore7", player.lvl3score);
 		    PlayerPrefs.SetInt("HighestScore9", player.lvl4score);
+		    Debug.Log("latestlvl: " + player.latestLvl);
+		    Debug.Log("lvl1: " + player.lvl1score);
+		    Debug.Log("lvl2: " + player.lvl2score);
+		    Debug.Log("lvl3: " + player.lvl3score);
+		    Debug.Log("lvl4: " + player.lvl4score);
 			SceneManager.LoadScene(1);
 		} else if(isNewUser && clicked){
 			PlayerPrefs.SetInt("LevelPassed", 0);

@@ -42,9 +42,6 @@ public class FireBase : MonoBehaviour
         Player player = new Player(playerName, lvl1, lvl2, lvl3, lvl4, lvlPassed);
         string json = JsonUtility.ToJson(player);
         reference.SetRawJsonValueAsync(json);
-    }
-
-    void Update(){
         StartCoroutine(ShowStatistics());
     }
 

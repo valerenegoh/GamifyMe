@@ -13,7 +13,7 @@ High scores reveal up to top 10 cheaters per level.
 Built using Unity.
 
 Please see report under `Report` folder.
-Please see this link for video gameplay: https://drive.google.com/file/d/1BceIUERD384-hZji-gt_Y9zH5Ysyhbbr/view?usp=sharing
+Please see this link for video gameplay: https://drive.google.com/file/d/1trrFGSxpUasPRRbzqYfnyHCxJFic-DUa/view?usp=sharing
 
 All artworks are original
 Audio references:
